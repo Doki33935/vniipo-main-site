@@ -1,7 +1,7 @@
 /*
 Theme Name: VNIIPO Main
 Description: Основной сайт Оренбургского филиала ВНИИПО в стиле официального сайта института.
-Version: 0.2.0
+Version: 0.3.0
 Template: fyremezzonine-wp-theme
 Requires at least: 6.9
 Requires PHP: 8.3
@@ -175,6 +175,23 @@ p { margin: 0 0 1rem; }
 .vn-footer-bottom { display: flex; justify-content: space-between; gap: 25px; border-top: 1px solid #547096; padding-top: 18px; margin-top: 28px; font-size: .7rem; }
 .vn-preview-notice { padding: 10px 20px; background: #fff4cf; border-bottom: 1px solid #e2c66f; color: #584113; text-align: center; font: 13px/1.6 "Segoe UI", Arial, sans-serif; }
 .vn-preview-notice a { color: #584113; text-decoration: underline; margin-left: 15px; }
+.vn-information-block { padding: 22px; margin: 0 0 24px; background: #fff; border: 1px solid var(--vn-line); border-top: 3px solid var(--vn-accent); border-radius: 3px; overflow-wrap: anywhere; }
+.vn-information-block h2 { margin: 0 0 16px; font-size: 1.3rem; }
+.vn-information-block img { display: block; max-width: 100%; height: auto; }
+.vn-information-block-content> :last-child { margin-bottom: 0; }
+.vn-information-block-content .wp-block-columns { gap: 20px; }
+.vn-home-sidebar .vn-information-block { padding: 17px; margin-bottom: 0; }
+.vn-home-sidebar .vn-information-block h2 { font-size: 1rem; }
+.vn-information-block table { width: 100%; border-collapse: collapse; }
+.vn-information-block td, .vn-information-block th { border: 1px solid var(--vn-line); padding: 9px; }
+.vn-source-note { margin-top: 22px; padding-top: 12px; border-top: 1px solid var(--vn-line); font-size: .72rem; color: var(--vn-muted); }
+.vn-source-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.vn-source-gallery img { width: 100%; height: auto; }
+.vn-prose table, .vn-information-block-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.vn-prose td, .vn-prose th { border: 1px solid var(--vn-line); padding: 9px; vertical-align: top; min-width: 160px; }
+.vn-prose, .vn-information-block-content { overflow-wrap: anywhere; min-width: 0; }
+.vn-prose img, .vn-information-block-content img { max-width: 100%; height: auto; }
+.vn-contact-phone { margin-block: 8px; }
 @media (prefers-reduced-motion: no-preference) { a, button { transition: background-color .15s, color .15s; } }
 @media (max-width: 1000px) {
   .vn-home-layout, .vn-page-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 22px; }

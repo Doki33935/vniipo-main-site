@@ -27,7 +27,7 @@
             <?php endif; ?>
         </a>
         <a class="vn-brand" href="<?php echo esc_url(vniipo_site_url('/')); ?>">
-            <strong><?php esc_html_e('Оренбургский филиал', 'vniipo'); ?><br>ФГБУ ВНИИПО МЧС России</strong>
+            <strong>ФГБУ ВНИИПО МЧС России<br><?php esc_html_e('Оренбургский филиал', 'vniipo'); ?></strong>
             <span><?php esc_html_e('Всероссийский научно-исследовательский институт противопожарной обороны', 'vniipo'); ?></span>
         </a>
         <a class="vn-ministry" href="https://mchs.gov.ru/" aria-label="<?php esc_attr_e('МЧС России — официальный сайт', 'vniipo'); ?>">

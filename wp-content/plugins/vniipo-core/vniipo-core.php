@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VNIIPO Core
  * Description: Структура, документы и вопросы основного сайта Оренбургского филиала ВНИИПО.
- * Version: 0.1.0
+ * Version: 0.3.0
  * Requires at least: 6.9
  * Requires PHP: 8.3
  * Text Domain: vniipo
@@ -11,6 +11,8 @@ if (!defined('ABSPATH')) { exit; }
 
 define('VNIIPO_CORE_DIR', __DIR__);
 require_once __DIR__ . '/includes/structure.php';
+require_once __DIR__ . '/includes/information-blocks.php';
+require_once __DIR__ . '/includes/source-content.php';
 
 function vniipo_register_content_types() {
     foreach (array('vniipo_document' => array('Документы', 'Документ'), 'vniipo_faq' => array('Вопросы и ответы', 'Вопрос и ответ'), 'vniipo_banner' => array('Анонсы и баннеры', 'Анонс')) as $type => $labels) {

@@ -1,6 +1,6 @@
 {
   "name": "vniipo-main-site",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "WordPress site for the Orenburg VNIIPO branch",
   "scripts": {

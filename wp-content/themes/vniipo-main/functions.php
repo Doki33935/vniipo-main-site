@@ -75,6 +75,7 @@ function vniipo_nav_fallback() {
 }
 
 function vniipo_render_news($count = 3) {
+    if (function_exists('vniipo_source_news_fallback') && vniipo_source_news_fallback()) { vniipo_render_source_news($count); return; }
     $news = new WP_Query(array('post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => $count, 'ignore_sticky_posts' => true, 'no_found_rows' => true));
     if (!$news->have_posts()) { echo '<p class="vn-empty">' . esc_html__('Новости появятся после публикации редактором.', 'vniipo') . '</p>'; return; }
     echo '<div class="vn-news-grid">';
@@ -88,6 +89,7 @@ function vniipo_render_news($count = 3) {
 
 function vniipo_render_listing($type) {
     $paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
+    if ($type === 'post' && function_exists('vniipo_source_news_fallback') && vniipo_source_news_fallback()) { vniipo_render_source_news(12, $paged); return; }
     $query = new WP_Query(array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => $paged));
     if (!$query->have_posts()) { echo '<p class="vn-empty">' . esc_html__('В этом разделе пока нет опубликованных материалов.', 'vniipo') . '</p>'; return; }
     echo '<div class="' . esc_attr($type === 'vniipo_faq' ? 'vn-faq' : 'vn-documents') . '">';
@@ -102,3 +104,10 @@ function vniipo_render_listing($type) {
     echo '</div><div class="vn-pager">' . wp_kses_post((string) paginate_links(array('total' => $query->max_num_pages, 'current' => $paged))) . '</div>';
     wp_reset_postdata();
 }
+
+add_filter('document_title_parts', static function ($parts) {
+    $name = 'ФГБУ ВНИИПО МЧС России — Оренбургский филиал';
+    $parts['site'] = $name;
+    if (is_front_page()) { $parts['title'] = $name; unset($parts['site'], $parts['tagline']); }
+    return $parts;
+});

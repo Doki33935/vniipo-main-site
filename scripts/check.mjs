@@ -17,7 +17,7 @@ for (const page of structure.pages) {
   assert(!/^\/(conferences|registration|editor|partnership)(\/|$)/.test(page.path), `Conference route collision: ${page.path}`);
   const parent = page.path === '/' ? '/' : path.posix.dirname(page.path.slice(0, -1)) + '/';
   assert(parent === '/' || parent === '//' || paths.has(parent), `Missing/out-of-order parent: ${page.path}`);
-  assert(page.title && Array.isArray(page.source) && page.source[0] <= page.source[1], `Missing source: ${page.key}`);
+  assert(page.title && ((Array.isArray(page.source) && page.source[0] <= page.source[1]) || (page.source_url && new URL(page.source_url).hostname === 'oren.vniipo.ru')), `Missing source: ${page.key}`);
   for (const field of ['external', 'reference']) {
     if (page[field]) assert(new URL(page[field]).protocol === 'https:', `Invalid external resource: ${page.key}`);
   }
@@ -61,5 +61,26 @@ for (const name of files) {
 }
 const theme = await read('wp-content/themes/vniipo-main/style.css');
 assert(theme.includes('Template: fyremezzonine-wp-theme'));
+const snapshot = JSON.parse(await read('wp-content/plugins/vniipo-core/content/oren-source.json'));
+const sourceIds = new Set();
+for (const record of snapshot.records) {
+  assert(!sourceIds.has(record.uid), `Duplicate source UID: ${record.uid}`);
+  sourceIds.add(record.uid);
+  assert.equal(new URL(record.source_url).hostname, 'oren.vniipo.ru');
+  assert(/^[a-f0-9]{64}$/.test(record.source_sha256));
+  assert(!/<(?:script|iframe|form|input|object|embed)\b|\son[a-z]+\s*=|(?:href|src)=["']\s*(?:javascript|data):/i.test(record.html), `Unsafe source HTML: ${record.uid}`);
+  if (record.kind === 'page') assert(keys.has(record.key), `Unknown source page: ${record.key}`);
+  if (record.kind === 'post') assert(/^\d{4}-\d{2}-\d{2}$/.test(record.date), `Missing source date: ${record.uid}`);
+}
+assert.equal(snapshot.records.filter(record => record.kind === 'post').length, snapshot.archive_discovered);
+let sourceImages = 0;
+for (const media of Object.values(snapshot.media)) {
+  if (media.status !== 'local') continue;
+  assert(/^[a-f0-9]{20}\.(jpg|jpeg|png|gif|webp)$/.test(media.file));
+  const bytes = await readFile(path.join(root, 'wp-content/plugins/vniipo-core/content/source-media', media.file));
+  assert.equal(bytes.length, media.bytes);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), media.sha256, `Source image changed: ${media.file}`);
+  sourceImages++;
+}
 assert(!(await read('.env.example')).match(/PASSWORD=(?!CHANGE_ME)/));
-console.log(`PASS: ${keys.size} pages, 6 menu entries, ${redirects.size} redirects, ${Object.keys(lock.sha256).length} pinned upstream files; JavaScript syntax and source hygiene.`);
+console.log(`PASS: ${keys.size} pages, 6 menu entries, ${redirects.size} redirects, ${Object.keys(lock.sha256).length} pinned upstream files, ${sourceIds.size} source records, ${sourceImages} verified images; JavaScript syntax and source hygiene.`);

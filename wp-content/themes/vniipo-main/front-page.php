@@ -4,7 +4,7 @@
         <section class="vn-feature" aria-labelledby="vn-feature-title">
             <div class="vn-feature-content">
                 <p class="vn-eyebrow"><?php esc_html_e('Наука · Испытания · Образование', 'vniipo'); ?></p>
-                <h1 id="vn-feature-title"><?php esc_html_e('Оренбургский филиал', 'vniipo'); ?><span>ФГБУ ВНИИПО МЧС России</span></h1>
+                <h1 id="vn-feature-title">ФГБУ ВНИИПО МЧС России<span><?php esc_html_e('Оренбургский филиал', 'vniipo'); ?></span></h1>
                 <p><?php esc_html_e('Научно-исследовательская, образовательная и конгрессно-выставочная деятельность в области пожарной безопасности.', 'vniipo'); ?></p>
                 <a class="vn-button vn-button-light" href="<?php echo esc_url(vniipo_main_url('branch')); ?>"><?php esc_html_e('Информация о филиале', 'vniipo'); ?> <span aria-hidden="true">→</span></a>
             </div>
@@ -30,10 +30,14 @@
             <?php endforeach; ?>
         </nav>
 
+        <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('home-top'); } ?>
+
         <section class="vn-home-section">
             <div class="vn-section-head"><h2><?php esc_html_e('Новости филиала', 'vniipo'); ?></h2><a href="<?php echo esc_url(vniipo_main_url('news')); ?>"><?php esc_html_e('Все новости', 'vniipo'); ?> →</a></div>
             <?php vniipo_render_news(6); ?>
         </section>
+
+        <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('home-after-news'); } ?>
 
         <section class="vn-home-section">
             <div class="vn-section-head"><h2><?php esc_html_e('Основные направления', 'vniipo'); ?></h2></div>
@@ -61,9 +65,11 @@
                 <p class="vn-empty"><?php esc_html_e('Опубликованные конференции появятся здесь после подключения контента портала.', 'vniipo'); ?> <a href="<?php echo esc_url(vniipo_main_url('conference-portal')); ?>"><?php esc_html_e('Действующий портал конференций', 'vniipo'); ?> ↗</a></p>
             <?php endif; wp_reset_postdata(); ?>
         </section>
+        <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('home-bottom'); } ?>
     </div>
 
     <aside class="vn-home-sidebar" aria-label="<?php esc_attr_e('Информация и сервисы', 'vniipo'); ?>">
+        <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('sidebar'); } ?>
         <section class="vn-sidebox"><h2><?php esc_html_e('Поиск по сайту', 'vniipo'); ?></h2><div class="vn-sidebox-body"><?php get_search_form(); ?></div></section>
         <a class="vn-appeal-banner" href="<?php echo esc_url(vniipo_main_url('appeals')); ?>"><span><?php esc_html_e('Обращения граждан', 'vniipo'); ?></span><small><?php esc_html_e('Порядок обращения и личного приёма', 'vniipo'); ?></small><b aria-hidden="true">→</b></a>
         <section class="vn-sidebox"><h2><?php esc_html_e('Информация для посетителей', 'vniipo'); ?></h2><ul class="vn-side-links">
@@ -73,7 +79,7 @@
         </ul></section>
         <a class="vn-service-banner" href="<?php echo esc_url(vniipo_main_url('certification')); ?>"><span><?php esc_html_e('Сертификация', 'vniipo'); ?></span><small><?php esc_html_e('Система добровольной сертификации МЧС России', 'vniipo'); ?></small></a>
         <a class="vn-service-banner vn-service-banner-light" href="<?php echo esc_url(vniipo_main_url('testing-ground')); ?>"><span><?php esc_html_e('Испытательный полигон', 'vniipo'); ?></span><small><?php esc_html_e('Информация о полигоне филиала', 'vniipo'); ?></small></a>
-        <section class="vn-sidebox"><h2><?php esc_html_e('Контактная информация', 'vniipo'); ?></h2><div class="vn-sidebox-body"><p><?php esc_html_e('Контакты филиала, реквизиты и порядок обращения граждан.', 'vniipo'); ?></p><a href="<?php echo esc_url(vniipo_main_url('contacts')); ?>"><?php esc_html_e('Перейти в раздел', 'vniipo'); ?> →</a></div></section>
+        <section class="vn-sidebox"><h2><?php esc_html_e('Контактная информация', 'vniipo'); ?></h2><div class="vn-sidebox-body"><?php if (!(function_exists('vniipo_render_contact_summary') && vniipo_render_contact_summary())) : ?><p><?php esc_html_e('Контакты филиала, реквизиты и порядок обращения граждан.', 'vniipo'); ?></p><?php endif; ?><a href="<?php echo esc_url(vniipo_main_url('contact-info')); ?>"><?php esc_html_e('Все контакты', 'vniipo'); ?> →</a></div></section>
         <div class="vn-public-links"><a href="<?php echo esc_url(vniipo_main_url('anticorruption')); ?>"><?php esc_html_e('Противодействие коррупции', 'vniipo'); ?></a><a href="<?php echo esc_url(vniipo_main_url('antiterror')); ?>"><?php esc_html_e('Противодействие терроризму', 'vniipo'); ?></a></div>
     </aside>
 </main>

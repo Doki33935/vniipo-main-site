@@ -10,8 +10,8 @@ get_header();
     <h1 class="vn-page-heading"><?php echo esc_html($definition['title']); ?></h1>
     <div class="vn-page-grid"><article class="vn-prose">
         <?php if ($content_page && trim($content_page->post_content) !== '') : ?>
-            <?php echo wp_kses_post(wpautop($content_page->post_content)); ?>
-        <?php elseif (empty($definition['listing'])) : ?>
+            <?php echo wp_kses_post(apply_filters('the_content', $content_page->post_content)); ?>
+        <?php elseif (empty($definition['listing']) && !(function_exists('vniipo_render_source_page') && vniipo_render_source_page($key))) : ?>
             <p class="vn-empty"><?php esc_html_e('Материалы раздела готовятся к публикации.', 'vniipo'); ?></p>
         <?php endif; ?>
         <?php if (!empty($definition['external'])) : ?><p><a class="vn-button" href="<?php echo esc_url($definition['external']); ?>"><?php esc_html_e('Открыть официальный ресурс', 'vniipo'); ?> ↗</a></p><?php endif; ?>
@@ -27,6 +27,7 @@ get_header();
             <?php endforeach; ?>
         </ul>
         <?php if (!empty($definition['listing'])) { vniipo_render_listing($definition['listing']); } ?>
+        <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('page', $key); } ?>
     </article><aside class="vn-sidebar"><h2><?php esc_html_e('Разделы сайта', 'vniipo'); ?></h2><?php vniipo_primary_navigation(); ?></aside></div>
 </main>
 <?php get_footer(); ?>

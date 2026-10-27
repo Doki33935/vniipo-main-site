@@ -1,65 +1,656 @@
 {
   "version": 1,
   "pages": [
-    {"key":"home","path":"/","title":"Главная","source":[3,50],"menu":true},
-    {"key":"branch","path":"/branch/","title":"Филиал","source":[51,92],"menu":true},
-    {"key":"structure","path":"/branch/structure/","title":"Структура","source":[52,53]},
-    {"key":"activities","path":"/branch/activities/","title":"Предмет, цели и виды деятельности учреждения","source":[54,60]},
-    {"key":"goals","path":"/branch/activities/goals/","title":"Основные цели и предмет деятельности филиала","source":[56,56]},
-    {"key":"activity-types","path":"/branch/activities/types/","title":"Основные виды деятельности филиала","source":[57,57]},
-    {"key":"regulations","path":"/branch/activities/regulations/","title":"Нормативные правовые акты, регламентирующие деятельность филиала","source":[58,58]},
-    {"key":"charter","path":"/branch/activities/regulations/charter/","title":"Устав","source":[59,59]},
-    {"key":"licenses","path":"/branch/activities/licenses/","title":"Перечень лицензий","source":[60,60]},
-    {"key":"leadership","path":"/branch/leadership/","title":"Руководство","source":[61,61]},
-    {"key":"testing-ground","path":"/branch/testing-ground/","title":"Полигон","source":[62,62]},
-    {"key":"symbols","path":"/branch/symbols/","title":"Символика","source":[63,63],"external":"https://vniipo.ru/"},
-    {"key":"history","path":"/branch/history/","title":"История","source":[64,64]},
-    {"key":"tour","path":"/branch/tour/","title":"Виртуальная экскурсия","source":[65,65]},
-    {"key":"anticorruption","path":"/branch/anticorruption/","title":"Противодействие коррупции","source":[66,73]},
-    {"key":"anticorruption-acts","path":"/branch/anticorruption/acts/","title":"Нормативные правовые и иные акты в сфере противодействия коррупции","source":[68,68]},
-    {"key":"anticorruption-expertise","path":"/branch/anticorruption/expertise/","title":"Антикоррупционная экспертиза","source":[69,69]},
-    {"key":"anticorruption-guidance","path":"/branch/anticorruption/guidance/","title":"Методические материалы","source":[70,70]},
-    {"key":"anticorruption-forms","path":"/branch/anticorruption/forms/","title":"Формы документов для заполнения","source":[71,71]},
-    {"key":"anticorruption-feedback","path":"/branch/anticorruption/feedback/","title":"Обратная связь для сообщений о фактах коррупции","source":[72,72]},
-    {"key":"anticorruption-gifts","path":"/branch/anticorruption/gifts/","title":"Информация о соблюдении запрета дарить и получать подарки","source":[73,73]},
-    {"key":"antiterror","path":"/branch/antiterror/","title":"Противодействие терроризму","source":[74,75],"external":"https://mchs.gov.ru/deyatelnost/protivodeystvie-terrorizmu"},
-    {"key":"appeals","path":"/branch/appeals/","title":"Обращения граждан","source":[76,82],"external":"https://vniipo.ru/","external_note":"Точный адрес электронной приёмной требуется уточнить"},
-    {"key":"appeals-procedure","path":"/branch/appeals/procedure/","title":"Порядок обращения граждан","source":[78,78]},
-    {"key":"appeals-reception","path":"/branch/appeals/reception/","title":"Организация личного приёма граждан","source":[79,79]},
-    {"key":"appeals-schedule","path":"/branch/appeals/schedule/","title":"График личного приёма граждан","source":[80,80]},
-    {"key":"appeals-regulations","path":"/branch/appeals/regulations/","title":"Нормативные документы о рассмотрении обращений граждан","source":[81,81]},
-    {"key":"useful","path":"/branch/useful/","title":"Полезная информация","source":[83,92]},
-    {"key":"news","path":"/branch/useful/news/","title":"Новости","source":[84,84],"listing":"post"},
-    {"key":"fire-regulations","path":"/branch/useful/fire-regulations/","title":"Нормативное правовое регулирование в области пожарной безопасности","source":[86,90]},
-    {"key":"federal-laws","path":"/branch/useful/fire-regulations/laws/","title":"Федеральные законы","source":[87,87]},
-    {"key":"presidential-decrees","path":"/branch/useful/fire-regulations/decrees/","title":"Указы Президента","source":[88,88]},
-    {"key":"government-decisions","path":"/branch/useful/fire-regulations/decisions/","title":"Постановления Правительства","source":[89,89]},
-    {"key":"mchs-acts","path":"/branch/useful/fire-regulations/mchs/","title":"Нормативные правовые акты МЧС России","source":[90,90]},
-    {"key":"vacancies","path":"/branch/useful/vacancies/","title":"Вакансии","source":[91,91]},
-    {"key":"media","path":"/branch/useful/media/","title":"Фото и видеоархив","source":[92,92]},
-    {"key":"research","path":"/research/","title":"Научно-исследовательская деятельность","source":[93,97],"menu":true},
-    {"key":"laboratory","path":"/research/laboratory/","title":"Испытательная лаборатория","source":[94,94]},
-    {"key":"certification","path":"/research/certification/","title":"Система добровольной сертификации МЧС России в области пожарной безопасности","source":[95,95]},
-    {"key":"education","path":"/education/","title":"Образовательная деятельность","source":[98,101],"menu":true},
-    {"key":"education-info","path":"/education/information/","title":"Сведения об образовательной деятельности","source":[99,100],"reference":"https://oren.vniipo.ru/svedeniya-ob-obrazovatel-noy-organizacii_38/"},
-    {"key":"congress","path":"/congress/","title":"Конгрессно-выставочная деятельность","source":[102,105],"menu":true},
-    {"key":"congress-info","path":"/congress/information/","title":"Сведения о конгрессно-выставочной деятельности","source":[103,103]},
-    {"key":"conference-portal","path":"/congress/portal/","title":"Портал конференций","source":[104,104],"external":"https://orenvniipo.online/"},
-    {"key":"contacts","path":"/contacts/","title":"Контакты","source":[106,108],"menu":true},
-    {"key":"contact-info","path":"/contacts/information/","title":"Контактная информация","source":[107,107]},
-    {"key":"requisites","path":"/contacts/requisites/","title":"Реквизиты","source":[108,108]},
-    {"key":"documents","path":"/documents/","title":"Новые документы","source":[20,50],"listing":"vniipo_document"},
-    {"key":"faq","path":"/faq/","title":"Вопрос — ответ","source":[19,19],"listing":"vniipo_faq"}
+    {
+      "key": "home",
+      "path": "/",
+      "title": "Главная",
+      "source": [
+        3,
+        50
+      ],
+      "menu": true
+    },
+    {
+      "key": "branch",
+      "path": "/branch/",
+      "title": "Филиал",
+      "source": [
+        51,
+        92
+      ],
+      "menu": true
+    },
+    {
+      "key": "structure",
+      "path": "/branch/structure/",
+      "title": "Структура",
+      "source": [
+        52,
+        53
+      ]
+    },
+    {
+      "key": "activities",
+      "path": "/branch/activities/",
+      "title": "Предмет, цели и виды деятельности учреждения",
+      "source": [
+        54,
+        60
+      ]
+    },
+    {
+      "key": "goals",
+      "path": "/branch/activities/goals/",
+      "title": "Основные цели и предмет деятельности филиала",
+      "source": [
+        56,
+        56
+      ]
+    },
+    {
+      "key": "activity-types",
+      "path": "/branch/activities/types/",
+      "title": "Основные виды деятельности филиала",
+      "source": [
+        57,
+        57
+      ]
+    },
+    {
+      "key": "regulations",
+      "path": "/branch/activities/regulations/",
+      "title": "Нормативные правовые акты, регламентирующие деятельность филиала",
+      "source": [
+        58,
+        58
+      ]
+    },
+    {
+      "key": "charter",
+      "path": "/branch/activities/regulations/charter/",
+      "title": "Устав",
+      "source": [
+        59,
+        59
+      ]
+    },
+    {
+      "key": "licenses",
+      "path": "/branch/activities/licenses/",
+      "title": "Перечень лицензий",
+      "source": [
+        60,
+        60
+      ]
+    },
+    {
+      "key": "leadership",
+      "path": "/branch/leadership/",
+      "title": "Руководство",
+      "source": [
+        61,
+        61
+      ]
+    },
+    {
+      "key": "testing-ground",
+      "path": "/branch/testing-ground/",
+      "title": "Полигон",
+      "source": [
+        62,
+        62
+      ]
+    },
+    {
+      "key": "symbols",
+      "path": "/branch/symbols/",
+      "title": "Символика",
+      "source": [
+        63,
+        63
+      ],
+      "external": "https://vniipo.ru/"
+    },
+    {
+      "key": "history",
+      "path": "/branch/history/",
+      "title": "История",
+      "source": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "tour",
+      "path": "/branch/tour/",
+      "title": "Виртуальная экскурсия",
+      "source": [
+        65,
+        65
+      ]
+    },
+    {
+      "key": "anticorruption",
+      "path": "/branch/anticorruption/",
+      "title": "Противодействие коррупции",
+      "source": [
+        66,
+        73
+      ]
+    },
+    {
+      "key": "anticorruption-acts",
+      "path": "/branch/anticorruption/acts/",
+      "title": "Нормативные правовые и иные акты в сфере противодействия коррупции",
+      "source": [
+        68,
+        68
+      ]
+    },
+    {
+      "key": "anticorruption-expertise",
+      "path": "/branch/anticorruption/expertise/",
+      "title": "Антикоррупционная экспертиза",
+      "source": [
+        69,
+        69
+      ]
+    },
+    {
+      "key": "anticorruption-guidance",
+      "path": "/branch/anticorruption/guidance/",
+      "title": "Методические материалы",
+      "source": [
+        70,
+        70
+      ]
+    },
+    {
+      "key": "anticorruption-forms",
+      "path": "/branch/anticorruption/forms/",
+      "title": "Формы документов для заполнения",
+      "source": [
+        71,
+        71
+      ]
+    },
+    {
+      "key": "anticorruption-feedback",
+      "path": "/branch/anticorruption/feedback/",
+      "title": "Обратная связь для сообщений о фактах коррупции",
+      "source": [
+        72,
+        72
+      ]
+    },
+    {
+      "key": "anticorruption-gifts",
+      "path": "/branch/anticorruption/gifts/",
+      "title": "Информация о соблюдении запрета дарить и получать подарки",
+      "source": [
+        73,
+        73
+      ]
+    },
+    {
+      "key": "antiterror",
+      "path": "/branch/antiterror/",
+      "title": "Противодействие терроризму",
+      "source": [
+        74,
+        75
+      ],
+      "external": "https://mchs.gov.ru/deyatelnost/protivodeystvie-terrorizmu"
+    },
+    {
+      "key": "appeals",
+      "path": "/branch/appeals/",
+      "title": "Обращения граждан",
+      "source": [
+        76,
+        82
+      ],
+      "external": "https://vniipo.ru/",
+      "external_note": "Точный адрес электронной приёмной требуется уточнить"
+    },
+    {
+      "key": "appeals-procedure",
+      "path": "/branch/appeals/procedure/",
+      "title": "Порядок обращения граждан",
+      "source": [
+        78,
+        78
+      ]
+    },
+    {
+      "key": "appeals-reception",
+      "path": "/branch/appeals/reception/",
+      "title": "Организация личного приёма граждан",
+      "source": [
+        79,
+        79
+      ]
+    },
+    {
+      "key": "appeals-schedule",
+      "path": "/branch/appeals/schedule/",
+      "title": "График личного приёма граждан",
+      "source": [
+        80,
+        80
+      ]
+    },
+    {
+      "key": "appeals-regulations",
+      "path": "/branch/appeals/regulations/",
+      "title": "Нормативные документы о рассмотрении обращений граждан",
+      "source": [
+        81,
+        81
+      ]
+    },
+    {
+      "key": "useful",
+      "path": "/branch/useful/",
+      "title": "Полезная информация",
+      "source": [
+        83,
+        92
+      ]
+    },
+    {
+      "key": "news",
+      "path": "/branch/useful/news/",
+      "title": "Новости",
+      "source": [
+        84,
+        84
+      ],
+      "listing": "post"
+    },
+    {
+      "key": "fire-regulations",
+      "path": "/branch/useful/fire-regulations/",
+      "title": "Нормативное правовое регулирование в области пожарной безопасности",
+      "source": [
+        86,
+        90
+      ]
+    },
+    {
+      "key": "federal-laws",
+      "path": "/branch/useful/fire-regulations/laws/",
+      "title": "Федеральные законы",
+      "source": [
+        87,
+        87
+      ]
+    },
+    {
+      "key": "presidential-decrees",
+      "path": "/branch/useful/fire-regulations/decrees/",
+      "title": "Указы Президента",
+      "source": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "government-decisions",
+      "path": "/branch/useful/fire-regulations/decisions/",
+      "title": "Постановления Правительства",
+      "source": [
+        89,
+        89
+      ]
+    },
+    {
+      "key": "mchs-acts",
+      "path": "/branch/useful/fire-regulations/mchs/",
+      "title": "Нормативные правовые акты МЧС России",
+      "source": [
+        90,
+        90
+      ]
+    },
+    {
+      "key": "vacancies",
+      "path": "/branch/useful/vacancies/",
+      "title": "Вакансии",
+      "source": [
+        91,
+        91
+      ]
+    },
+    {
+      "key": "media",
+      "path": "/branch/useful/media/",
+      "title": "Фото и видеоархив",
+      "source": [
+        92,
+        92
+      ]
+    },
+    {
+      "key": "research",
+      "path": "/research/",
+      "title": "Научно-исследовательская деятельность",
+      "source": [
+        93,
+        97
+      ],
+      "menu": true
+    },
+    {
+      "key": "laboratory",
+      "path": "/research/laboratory/",
+      "title": "Испытательная лаборатория",
+      "source": [
+        94,
+        94
+      ]
+    },
+    {
+      "key": "certification",
+      "path": "/research/certification/",
+      "title": "Система добровольной сертификации МЧС России в области пожарной безопасности",
+      "source": [
+        95,
+        95
+      ]
+    },
+    {
+      "key": "education",
+      "path": "/education/",
+      "title": "Образовательная деятельность",
+      "source": [
+        98,
+        101
+      ],
+      "menu": true
+    },
+    {
+      "key": "education-info",
+      "path": "/education/information/",
+      "title": "Сведения об образовательной деятельности",
+      "source": [
+        99,
+        100
+      ],
+      "reference": "https://oren.vniipo.ru/svedeniya-ob-obrazovatel-noy-organizacii_38/"
+    },
+    {
+      "key": "congress",
+      "path": "/congress/",
+      "title": "Конгрессно-выставочная деятельность",
+      "source": [
+        102,
+        105
+      ],
+      "menu": true
+    },
+    {
+      "key": "congress-info",
+      "path": "/congress/information/",
+      "title": "Сведения о конгрессно-выставочной деятельности",
+      "source": [
+        103,
+        103
+      ]
+    },
+    {
+      "key": "conference-portal",
+      "path": "/congress/portal/",
+      "title": "Портал конференций",
+      "source": [
+        104,
+        104
+      ],
+      "external": "https://orenvniipo.online/"
+    },
+    {
+      "key": "contacts",
+      "path": "/contacts/",
+      "title": "Контакты",
+      "source": [
+        106,
+        108
+      ],
+      "menu": true
+    },
+    {
+      "key": "contact-info",
+      "path": "/contacts/information/",
+      "title": "Контактная информация",
+      "source": [
+        107,
+        107
+      ]
+    },
+    {
+      "key": "requisites",
+      "path": "/contacts/requisites/",
+      "title": "Реквизиты",
+      "source": [
+        108,
+        108
+      ]
+    },
+    {
+      "key": "documents",
+      "path": "/documents/",
+      "title": "Новые документы",
+      "source": [
+        20,
+        50
+      ],
+      "listing": "vniipo_document"
+    },
+    {
+      "key": "faq",
+      "path": "/faq/",
+      "title": "Вопрос — ответ",
+      "source": [
+        19,
+        19
+      ],
+      "listing": "vniipo_faq"
+    },
+    {
+      "key": "occupational-training",
+      "path": "/education/occupational-safety/",
+      "title": "Обучение работодателей и работников вопросам охраны труда",
+      "source_url": "https://oren.vniipo.ru/obuchenie-rabotodateley-i-rabotnikov-voprosam-ohrany-truda/"
+    },
+    {
+      "key": "professional-education",
+      "path": "/education/professional/",
+      "title": "Дополнительное профессиональное образование",
+      "source_url": "https://oren.vniipo.ru/dopolnitel-noe-professional-noe-obrazovanie/"
+    },
+    {
+      "key": "scientific-council",
+      "path": "/research/council/",
+      "title": "Секция научно-технического совета",
+      "source_url": "https://oren.vniipo.ru/nauchnaya-deyatel-nost/sekciya-nauchno-tehnicheskogo-soveta"
+    },
+    {
+      "key": "education-basic",
+      "path": "/education/information/basic/",
+      "title": "Основные сведения",
+      "source_url": "https://oren.vniipo.ru/osnovnye-svedeniya/"
+    },
+    {
+      "key": "education-documents",
+      "path": "/education/information/documents/",
+      "title": "Документы",
+      "source_url": "https://oren.vniipo.ru/dokumenty/"
+    },
+    {
+      "key": "education-facilities",
+      "path": "/education/information/facilities/",
+      "title": "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда",
+      "source_url": "https://oren.vniipo.ru/material-no-tehnicheskoe-obespechenie-i-osnaschennost-obrazovatel-nogo-processa/"
+    },
+    {
+      "key": "education-finance",
+      "path": "/education/information/finance/",
+      "title": "Финансово-хозяйственная деятельность",
+      "source_url": "https://oren.vniipo.ru/finansovo-hozyaystvennaya-deyatel-nost/"
+    },
+    {
+      "key": "education-governance",
+      "path": "/education/information/governance/",
+      "title": "Структура и органы управления образовательной организацией",
+      "source_url": "https://oren.vniipo.ru/struktura-i-organy-upravleniya-obrazovatel-noy-organizaciey/"
+    },
+    {
+      "key": "education-international",
+      "path": "/education/information/international/",
+      "title": "Международное сотрудничество",
+      "source_url": "https://oren.vniipo.ru/mezhdunarodnoe-sotrudnichestvo/"
+    },
+    {
+      "key": "education-management",
+      "path": "/education/information/management/",
+      "title": "Руководство",
+      "source_url": "https://oren.vniipo.ru/rukovodstvo/"
+    },
+    {
+      "key": "education-meals",
+      "path": "/education/information/meals/",
+      "title": "Организация питания в образовательной организации",
+      "source_url": "https://oren.vniipo.ru/pitanie/"
+    },
+    {
+      "key": "education-paid-services",
+      "path": "/education/information/paid-services/",
+      "title": "Платные образовательные услуги",
+      "source_url": "https://oren.vniipo.ru/platnye-obrazovatel-nye-uslugi/"
+    },
+    {
+      "key": "education-programs",
+      "path": "/education/information/programs/",
+      "title": "Образование",
+      "source_url": "https://oren.vniipo.ru/obrazovanie/"
+    },
+    {
+      "key": "education-support",
+      "path": "/education/information/support/",
+      "title": "Стипендии и меры поддержки обучающихся",
+      "source_url": "https://oren.vniipo.ru/stipendii/"
+    },
+    {
+      "key": "education-teachers",
+      "path": "/education/information/teachers/",
+      "title": "Педагогический состав",
+      "source_url": "https://oren.vniipo.ru/pedagogicheskiy-sostav/"
+    },
+    {
+      "key": "education-vacancies",
+      "path": "/education/information/vacancies/",
+      "title": "Вакантные места для приема (перевода)",
+      "source_url": "https://oren.vniipo.ru/vakantnye-mesta-dlya-priema-perevoda/"
+    },
+    {
+      "key": "service-b2c61b52",
+      "path": "/branch/activities/types/montazh-sistem-protivopozharnoy-zaschity/",
+      "title": "Монтаж систем противопожарной защиты",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/montazh-sistem-protivopozharnoy-zaschity"
+    },
+    {
+      "key": "service-70e1993b",
+      "path": "/branch/activities/types/nezavisimaya-ocenka-pozharnyh-riskov-audit-pozharnoy-bezopasnosti/",
+      "title": "Независимая оценка пожарных рисков (Аудит пожарной безопасности)",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/nezavisimaya-ocenka-pozharnyh-riskov-audit-pozharnoy-bezopasnosti"
+    },
+    {
+      "key": "service-125adad7",
+      "path": "/branch/activities/types/ognezaschitnaya-obrabotka-metallicheskih-zhelezobetonnyh-i-derevyannyh-konstrukciy/",
+      "title": "Огнезащитная обработка металлических, железобетонных и деревянных конструкций",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/ognezaschitnaya-obrabotka-metallicheskih-zhelezobetonnyh-i-derevyannyh-konstrukciy"
+    },
+    {
+      "key": "service-4d8cdac3",
+      "path": "/branch/activities/types/pozharno-tehnicheskoe-konsul-tirovanie/",
+      "title": "Пожарно-техническое консультирование",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/pozharno-tehnicheskoe-konsul-tirovanie"
+    },
+    {
+      "key": "service-0541430d",
+      "path": "/branch/activities/types/proektirovanie-sistem-protivopozharnoy-zaschity-ob-ektov-zaschity/",
+      "title": "Проектирование систем противопожарной защиты объектов защиты",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/proektirovanie-sistem-protivopozharnoy-zaschity-ob-ektov-zaschity"
+    },
+    {
+      "key": "service-94e2cb47",
+      "path": "/branch/activities/types/raschet-pozharnyh-riskov-i-drugie-pozharno-tehnicheskie-raschety/",
+      "title": "Расчет пожарных рисков и другие пожарно-технические расчеты",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/raschet-pozharnyh-riskov-i-drugie-pozharno-tehnicheskie-raschety"
+    },
+    {
+      "key": "service-242d9f2b",
+      "path": "/branch/activities/types/razrabotka-special-nyh-tehnicheskih-usloviy-na-proektirovanie-unikal-nyh-i-slozhnyh-ob-ektov-stroitel-stva/",
+      "title": "Разработка специальных технических условий на проектирование уникальных и сложных объектов строительства Проектирование систем п",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/razrabotka-special-nyh-tehnicheskih-usloviy-na-proektirovanie-unikal-nyh-i-slozhnyh-ob-ektov-stroitel-stva"
+    },
+    {
+      "key": "service-96ef4349",
+      "path": "/branch/activities/types/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot/",
+      "title": "Выполнение прикладных научно-исследовательских работ",
+      "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot"
+    }
   ],
   "links": [
-    {"parent":"research","title":"Полигон","target":"testing-ground","source":[96,96]},
-    {"parent":"useful","title":"Нормативные правовые акты, регламентирующие деятельность филиала","target":"regulations","source":[85,85]},
-    {"parent":"congress","title":"Конференции, семинары, круглые столы","url":"/conferences/","source":[105,105]}
+    {
+      "parent": "research",
+      "title": "Полигон",
+      "target": "testing-ground",
+      "source": [
+        96,
+        96
+      ]
+    },
+    {
+      "parent": "useful",
+      "title": "Нормативные правовые акты, регламентирующие деятельность филиала",
+      "target": "regulations",
+      "source": [
+        85,
+        85
+      ]
+    },
+    {
+      "parent": "congress",
+      "title": "Конференции, семинары, круглые столы",
+      "url": "/conferences/",
+      "source": [
+        105,
+        105
+      ]
+    }
   ],
   "redirects": [
-    {"from":"/news/","to":"/branch/useful/news/","reason":"Короткий адрес нового проекта"},
-    {"from":"/research/testing-ground/","to":"/branch/testing-ground/","reason":"Единственная каноническая страница полигона"},
-    {"from":"/branch/useful/regulations/","to":"/branch/activities/regulations/","reason":"Повторный пункт ТЗ, абзац 85"},
-    {"from":"/congress/conferences/","to":"/conferences/","reason":"Существующий маршрут Conference Manager"}
+    {
+      "from": "/news/",
+      "to": "/branch/useful/news/",
+      "reason": "Короткий адрес нового проекта"
+    },
+    {
+      "from": "/research/testing-ground/",
+      "to": "/branch/testing-ground/",
+      "reason": "Единственная каноническая страница полигона"
+    },
+    {
+      "from": "/branch/useful/regulations/",
+      "to": "/branch/activities/regulations/",
+      "reason": "Повторный пункт ТЗ, абзац 85"
+    },
+    {
+      "from": "/congress/conferences/",
+      "to": "/conferences/",
+      "reason": "Существующий маршрут Conference Manager"
+    }
   ]
 }

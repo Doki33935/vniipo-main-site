@@ -30,8 +30,10 @@ jobs:
       - name: WordPress integration checks
         run: |
           docker compose run --rm cli eval-file /opt/vniipo/smoke.php
+          docker compose run --rm cli eval-file /opt/vniipo/source-blocks-smoke.php
           docker compose run --rm cli eval-file /opt/vniipo/fixtures.php
           node scripts/http-smoke.mjs
+          node scripts/source-http-smoke.mjs
           docker compose exec -T wordpress sh -c 'if [ -s wp-content/debug.log ]; then cat wp-content/debug.log; exit 1; fi'
       - name: Capture pages for visual review
         run: |
