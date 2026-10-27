@@ -1,0 +1,39 @@
+{
+  "repository": "https://github.com/Doki33935/WordPress-conference-service",
+  "commit": "dd3e3a060f0d0d61a29b18be5acc2a39c8ac75b2",
+  "components": {
+    "theme": "1.9.1",
+    "plugin": "1.15.1"
+  },
+  "sha256": {
+    "wp-content/plugins/fyremezzonine-conference-manager/fyremezzonine-conference-manager.php": "427c200829c1e20b5016a3a7fc674fc6633205a412e2eae41f2f036a15a56587",
+    "wp-content/themes/fyremezzonine-wp-theme/archive-conference.php": "15c4ba3c3b7b70612e15c220f04abee879cbf228fee4e7c216de6a8b98fae629",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/collage.jpg": "1ee441e99e025f9a68b8f0aeb56276a1f78128c595fe9eb24d332436b0b32e54",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/hero-original.png": "e82f03d32b445d3f583edd791f9b2cc662839fc9221b73d535587c7cb6f299af",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/hero.svg": "a66638a9e7ab942d22ec6193ce8b952fbe41c520ce18b221dc446f23963c079e",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-antifire.png": "6a8811e16df26ad90ad2bfae3cb0cc8a2f4748fbf9c3956891c9e6bd3cab5bd1",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-fireproff.png": "10460c71922eb05de91a8d3c44f7abc494ffcb32636c3d5ae5787de4d6b231d5",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-kalancha.png": "cbe9ee37e8170ea71402ade5bf9f4b527d8bc64e78f5dd9fcab820e1381b8328",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-pgs56.png": "e4f1540baf329898bca699aa82749da1a2deef4df863f849596acd95c671355a",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-propb.png": "9ae53714a36152e0399eee9f5f4a7334c188d76c0b5f30649891a1bde91a25e5",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-rubezh.jpg": "dfdaded8dca2b269818afe4f390bee1750062b96d3ad6a457cf9d15fe7e12181",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-takir.png": "6554679074a290b6ec01423cda0b3c15f96d8740e98d9feb621e1fe0f0427539",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/logo-vniipo.jpg": "f54615b618796fcb9600266f7d5a31b219f32b509842b2fb1813a34b3f3578c6",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/oren-vniipo-logo.png": "c171c64816e13a68a8961094da8452078a9daacbfa0c367495626f40b13e5507",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/theme-effects.js": "8465eae48d838878cfeeeb27d8afd810974f178364efec0d3c7a8c731797ad2a",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/topic-1.png": "3158b4e5ee1bf2221e498d48f4da6388833b91d581b14b375b253338409d6bf9",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/topic-2.png": "468465379db59afd244d961565273a0cf62239c1fc8b993ef3f3a660686170dc",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/venue-original.jpg": "246cfa5ea693c13c97b8348fdb28e8af22eb25e42a314298305e057a23b43870",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/venue.svg": "6d30226511176fa075f7f43515dbf0a4dd6f66e76376bb91bce3674897d5c098",
+    "wp-content/themes/fyremezzonine-wp-theme/assets/vniipo-logo.jpg": "1f69c99e58d2bad1aee62a26922423be16590e665ac5740fd36b28e58138afb9",
+    "wp-content/themes/fyremezzonine-wp-theme/footer.php": "63f3fe82e8c97c55769c77120f569c91675f18ad2f664ec560c45b29a6c2ba67",
+    "wp-content/themes/fyremezzonine-wp-theme/front-page.php": "6822ca9718ef2be3ca18fbc1cd4d15a6d41d5ca1535cecf23e3508fc67fc4311",
+    "wp-content/themes/fyremezzonine-wp-theme/functions.php": "e9de4e3f6b50c8b8515f7891d4b902d34f89f045c361201c06b4a2f134a00484",
+    "wp-content/themes/fyremezzonine-wp-theme/header.php": "b81683ffb1d2b0e935a68d05182f6cb452bdba22d6d82ea3dade18230433b9da",
+    "wp-content/themes/fyremezzonine-wp-theme/index.php": "1cfcae16c91d00865abd3270fcdf7c7e32fc5b498de5384df67308626966cf6e",
+    "wp-content/themes/fyremezzonine-wp-theme/page.php": "0a1cefcd592b4fd13addb280a716be736ddce73af53c9bbfebecdf6da1a5c364",
+    "wp-content/themes/fyremezzonine-wp-theme/README.md": "a2ad9558934cb19721c26ccdb322d1b485449ae0f26af43dca48301c0ac85b63",
+    "wp-content/themes/fyremezzonine-wp-theme/single-conference.php": "6fc46a51c7eb033b266ee7109b4650c7a97ba14ba03f9939c34f1c355452c7ca",
+    "wp-content/themes/fyremezzonine-wp-theme/style.css": "dab68d1b853557e2cdc6618fe20d3fa0c79f8739e58d45b9da2f26bb039e31c5"
+  }
+}

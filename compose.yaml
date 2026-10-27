@@ -1,0 +1,60 @@
+name: ${COMPOSE_PROJECT_NAME:-vniipo-main}
+services:
+  db:
+    image: mariadb:11.4.10
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:?Set DB_NAME}
+      MARIADB_USER: ${DB_USER:?Set DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  wordpress:
+    image: wordpress:7.0.2-php8.3-apache
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${SITE_PORT:-8088}:80"
+    environment: &wp-environment
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME:?Set DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER:?Set DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('DISALLOW_FILE_EDIT', true);
+    volumes: &wp-volumes
+      - wordpress_data:/var/www/html
+      - ./wp-content/themes/fyremezzonine-wp-theme:/var/www/html/wp-content/themes/fyremezzonine-wp-theme:ro
+      - ./wp-content/themes/vniipo-main:/var/www/html/wp-content/themes/vniipo-main:ro
+      - ./wp-content/plugins/fyremezzonine-conference-manager:/var/www/html/wp-content/plugins/fyremezzonine-conference-manager:ro
+      - ./wp-content/plugins/vniipo-core:/var/www/html/wp-content/plugins/vniipo-core:ro
+      - ./scripts:/opt/vniipo:ro
+    depends_on:
+      db:
+        condition: service_healthy
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: [tools]
+    user: "33:33"
+    environment:
+      <<: *wp-environment
+      SITE_URL: ${SITE_URL:-http://localhost:8088}
+      WP_ADMIN_USER: ${WP_ADMIN_USER:-siteadmin}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD:?Set WP_ADMIN_PASSWORD}
+      WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-admin@example.invalid}
+    volumes: *wp-volumes
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  db_data:
+  wordpress_data:
