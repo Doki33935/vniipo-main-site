@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist', 'wordpress');
-const directories = ['themes/vniipo-main', 'themes/fyremezzonine-wp-theme', 'plugins/vniipo-core', 'plugins/fyremezzonine-conference-manager'];
+const directories = ['themes/vniipo-main', 'themes/fyremezzonine-wp-theme', 'plugins/vniipo-core', 'plugins/fyremezzonine-conference-manager', 'plugins/vniipo-preview'];
 const files = {};
 async function copy(relative) {
   const source = path.join(root, 'wp-content', relative);
@@ -22,5 +22,6 @@ async function copy(relative) {
   }
 }
 for (const directory of directories) await copy(directory);
-await writeFile(path.join(output, 'manifest.json'), JSON.stringify({ version: '0.1.0', files }, null, 2) + '\n');
+const version = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8')).version;
+await writeFile(path.join(output, 'manifest.json'), JSON.stringify({ version, files }, null, 2) + '\n');
 console.log(`Packaged ${Object.keys(files).length} files into dist/wordpress. Installation: docs/development.md`);

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="primary" class="vn-page vn-wrap">
 <?php while (have_posts()) : the_post(); $page_id = get_the_ID(); $key = get_post_meta($page_id, '_vniipo_key', true); $definition = function_exists('vniipo_page_definition') ? vniipo_page_definition($key) : null; ?>
-    <div class="vn-breadcrumbs"><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Главная', 'vniipo'); ?></a><?php foreach (array_reverse(get_post_ancestors($page_id)) as $ancestor) : ?> / <a href="<?php echo esc_url(get_permalink($ancestor)); ?>"><?php echo esc_html(get_the_title($ancestor)); ?></a><?php endforeach; ?></div>
+    <div class="vn-breadcrumbs"><a href="<?php echo esc_url(vniipo_site_url('/')); ?>"><?php esc_html_e('Главная', 'vniipo'); ?></a><?php foreach (array_reverse(get_post_ancestors($page_id)) as $ancestor) : ?> / <a href="<?php echo esc_url(get_permalink($ancestor)); ?>"><?php echo esc_html(get_the_title($ancestor)); ?></a><?php endforeach; ?></div>
     <h1 class="vn-page-heading"><?php the_title(); ?></h1>
     <div class="vn-page-grid"><article class="vn-prose">
         <?php if (trim(get_the_content()) !== '') : the_content(); elseif ($definition && empty($definition['listing'])) : ?><p class="vn-empty"><?php esc_html_e('Материалы раздела готовятся к публикации.', 'vniipo'); ?></p><?php endif; ?>

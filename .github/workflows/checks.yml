@@ -39,14 +39,32 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=artifacts/home-desktop.png --window-size=1440,1100 http://localhost:8088/
           google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=artifacts/home-mobile.png --window-size=430,1000 http://localhost:8088/
           google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=artifacts/conferences-desktop.png --window-size=1440,1100 http://localhost:8088/conferences/
+      - name: Verify private preview with the conference theme active
+        run: |
+          mkdir -p .local
+          docker compose run --rm cli plugin activate vniipo-preview
+          docker compose run --rm cli eval-file /opt/vniipo/preview-smoke.php prepare > .local/preview-test-state.json
+          node scripts/preview-http-smoke.mjs
+          docker compose run --rm -v "$PWD/.local:/opt/test-state" cli eval-file /opt/vniipo/preview-smoke.php assert /opt/test-state/preview-test-state.json
+          docker compose exec -T wordpress sh -c 'if [ -s wp-content/debug.log ]; then cat wp-content/debug.log; exit 1; fi'
+      - name: Restore local preview test state
+        if: always()
+        run: |
+          if [ -f .local/preview-test-state.json ]; then
+            docker compose run --rm -v "$PWD/.local:/opt/test-state" cli eval-file /opt/vniipo/preview-smoke.php cleanup /opt/test-state/preview-test-state.json
+            rm .local/preview-test-state.json
+          fi
       - name: Remove test content
         if: always()
         run: docker compose run --rm cli eval-file /opt/vniipo/fixtures.php cleanup
       - run: npm run package
+      - name: Build WordPress upload archives
+        shell: pwsh
+        run: ./scripts/build-preview.ps1
       - uses: actions/upload-artifact@v4
         with:
           name: vniipo-wordpress
-          path: dist/wordpress
+          path: dist
       - uses: actions/upload-artifact@v4
         if: always()
         with:

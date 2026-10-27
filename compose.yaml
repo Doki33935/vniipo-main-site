@@ -37,6 +37,7 @@ services:
       - ./wp-content/themes/vniipo-main:/var/www/html/wp-content/themes/vniipo-main:ro
       - ./wp-content/plugins/fyremezzonine-conference-manager:/var/www/html/wp-content/plugins/fyremezzonine-conference-manager:ro
       - ./wp-content/plugins/vniipo-core:/var/www/html/wp-content/plugins/vniipo-core:ro
+      - ./wp-content/plugins/vniipo-preview:/var/www/html/wp-content/plugins/vniipo-preview:ro
       - ./scripts:/opt/vniipo:ro
     depends_on:
       db:

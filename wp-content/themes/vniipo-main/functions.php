@@ -31,7 +31,23 @@ function vniipo_theme_assets() {
 add_action('wp_enqueue_scripts', 'vniipo_theme_assets', 20);
 
 function vniipo_main_url($key) {
+    if (function_exists('vniipo_preview_is_active') && vniipo_preview_is_active()) {
+        $definition = vniipo_page_definition($key);
+        return vniipo_preview_url($definition ? $definition['path'] : '/');
+    }
     return function_exists('vniipo_url') ? vniipo_url($key) : home_url('/');
+}
+
+function vniipo_site_url($path = '/') {
+    return function_exists('vniipo_preview_is_active') && vniipo_preview_is_active() ? vniipo_preview_url($path) : home_url($path);
+}
+
+function vniipo_primary_navigation() {
+    if (function_exists('vniipo_preview_is_active') && vniipo_preview_is_active()) {
+        vniipo_nav_fallback();
+        return;
+    }
+    wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'depth' => 1, 'fallback_cb' => 'vniipo_nav_fallback'));
 }
 
 function vniipo_home_menu_icon($title, $item, $args) {
@@ -46,7 +62,13 @@ function vniipo_nav_fallback() {
     echo '<ul>';
     if (function_exists('vniipo_structure')) {
         foreach (vniipo_structure()['pages'] as $page) {
-            if (!empty($page['menu'])) { echo '<li><a href="' . esc_url(vniipo_main_url($page['key'])) . '">' . esc_html($page['title']) . '</a></li>'; }
+            if (!empty($page['menu'])) {
+                $title = esc_html($page['title']);
+                if ($page['key'] === 'home') {
+                    $title = '<span class="vn-homepage-link"><svg class="vn-home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3 21 11M5 10v11h5v-7h4v7h5V10"/></svg><span class="vn-home-label">' . esc_html__('Главная', 'vniipo') . '</span></span>';
+                }
+                echo '<li><a href="' . esc_url(vniipo_main_url($page['key'])) . '">' . $title . '</a></li>';
+            }
         }
     }
     echo '</ul>';
