@@ -26,7 +26,7 @@
             <button class="vn-menu-toggle" type="button" aria-controls="vn-navigation" aria-expanded="false"><?php esc_html_e('Меню', 'vniipo'); ?></button>
         </div>
     </div>
-    <nav class="vn-nav" id="vn-navigation" aria-label="<?php esc_attr_e('Основная навигация', 'vniipo'); ?>"><div class="vn-wrap"><?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'depth' => 1, 'fallback_cb' => 'vniipo_nav_fallback')); ?></div></nav>
+    <nav class="vn-nav" id="vn-navigation" aria-label="<?php esc_attr_e('Основная навигация', 'vniipo'); ?>"><div class="vn-wrap"><?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'depth' => 1, 'fallback_cb' => 'vniipo_nav_fallback')); ?><div class="vn-nav-search"><?php get_search_form(); ?></div></div></nav>
 </header>
 <?php if (wp_get_environment_type() === 'local') : ?><div class="vn-wrap"><p class="vn-demo-note"><?php esc_html_e('Проект нового сайта. Материалы разделов заполняются и проверяются перед публикацией.', 'vniipo'); ?></p></div><?php endif; ?>
 <?php if (function_exists('fyremezzonine_manager_can_manage_conferences') && fyremezzonine_manager_can_manage_conferences()) : ?>

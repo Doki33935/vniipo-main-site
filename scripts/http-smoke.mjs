@@ -22,6 +22,9 @@ await check('/conferences/', 200, 'Конференции');
 await check('/registration/', 200, 'Регистрация');
 await check('/editor/login/', 200, 'Вход');
 await check('/conferences/vniipo-integration-check/', 200, 'Интеграционная проверка конференции');
+await check('/documents/', 200, 'Проверка публикации документа');
+await check('/faq/', 200, 'Проверка вопроса и ответа');
+await check('/branch/useful/news/page/2/', 200, 'Проверка новости');
 for (const redirect of structure.redirects) {
   const response = await fetch(new URL(redirect.from, base), { redirect: 'manual' });
   try {

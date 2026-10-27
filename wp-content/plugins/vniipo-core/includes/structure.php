@@ -31,14 +31,16 @@ function vniipo_url($key) {
 function vniipo_scaffold($set_front_page = false) {
     $ids = array();
     $created = 0;
+    $position = 0;
     foreach (vniipo_structure()['pages'] as $item) {
+        $position++;
         $slug = $item['path'] === '/' ? 'home' : basename(trim($item['path'], '/'));
         $parent_path = '/' . trim(dirname(trim($item['path'], '/')), './') . '/';
         $parent_path = $parent_path === '//' ? '/' : $parent_path;
         $parent_id = $parent_path === '/' ? 0 : ($ids[$parent_path] ?? 0);
         if ($parent_path !== '/' && !$parent_id) { throw new RuntimeException('Родитель не найден: ' . $item['path']); }
 
-        $existing = get_posts(array('post_type' => 'page', 'post_status' => 'any', 'meta_key' => '_vniipo_key', 'meta_value' => $item['key'], 'posts_per_page' => 2));
+        $existing = get_posts(array('post_type' => 'page', 'post_status' => array_values(get_post_stati()), 'meta_key' => '_vniipo_key', 'meta_value' => $item['key'], 'posts_per_page' => 2));
         if (count($existing) > 1) { throw new RuntimeException('Дублирующий ключ: ' . $item['key']); }
         if ($existing) {
             // Не возвращаем удалённые/перемещённые редактором страницы и не переписываем контент.
@@ -47,7 +49,7 @@ function vniipo_scaffold($set_front_page = false) {
         } else {
             $collision = get_page_by_path($item['path'] === '/' ? 'home' : trim($item['path'], '/'));
             if ($collision) { throw new RuntimeException('Адрес уже занят существующей страницей: ' . $item['path']); }
-            $id = wp_insert_post(array('post_type' => 'page', 'post_status' => 'publish', 'post_title' => $item['title'], 'post_name' => $slug, 'post_parent' => $parent_id, 'post_content' => '', 'meta_input' => array('_vniipo_key' => $item['key'])), true);
+            $id = wp_insert_post(array('post_type' => 'page', 'post_status' => 'publish', 'post_title' => $item['title'], 'post_name' => $slug, 'post_parent' => $parent_id, 'menu_order' => $position, 'post_content' => '', 'meta_input' => array('_vniipo_key' => $item['key'])), true);
             if (is_wp_error($id)) { throw new RuntimeException($id->get_error_message()); }
             $created++;
         }

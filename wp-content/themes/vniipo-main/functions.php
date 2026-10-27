@@ -77,6 +77,6 @@ function vniipo_render_listing($type) {
             echo '</div></details>';
         } else { get_template_part('template-parts/news-card'); }
     }
-    echo '</div><div class="vn-pager">' . wp_kses_post(paginate_links(array('total' => $query->max_num_pages, 'current' => $paged))) . '</div>';
+    echo '</div><div class="vn-pager">' . wp_kses_post((string) paginate_links(array('total' => $query->max_num_pages, 'current' => $paged))) . '</div>';
     wp_reset_postdata();
 }

@@ -41,6 +41,12 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    healthcheck:
+      test: [CMD, php, -r, "exit(@fsockopen('127.0.0.1',80)?0:1);"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
   cli:
     image: wordpress:cli-php8.3
     profiles: [tools]

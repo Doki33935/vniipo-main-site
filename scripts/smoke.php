@@ -6,6 +6,7 @@ function vniipo_assert($condition, $message) { if (!$condition) { throw new Runt
 
 vniipo_assert(get_stylesheet() === 'vniipo-main', 'Дочерняя тема не активна');
 vniipo_assert(get_template() === 'fyremezzonine-wp-theme', 'Родительская тема не подключена');
+vniipo_assert(get_locale() === 'ru_RU', 'Не задан русский язык сайта');
 foreach (array('conference', 'vniipo_document', 'vniipo_faq', 'vniipo_banner') as $type) { vniipo_assert(post_type_exists($type), 'Не зарегистрирован тип ' . $type); }
 foreach (array('conference_registration_form', 'conference_submission_form', 'conference_operational_summary') as $shortcode) { vniipo_assert(shortcode_exists($shortcode), 'Потерян shortcode ' . $shortcode); }
 $first = vniipo_scaffold();
@@ -14,12 +15,23 @@ $page = vniipo_page_by_key('branch');
 vniipo_assert($page !== null, 'Нет страницы филиала');
 $original = $page->post_content;
 $sentinel = '<p>Содержимое редактора для проверки повторного запуска.</p>';
+$front_page = get_option('page_on_front');
+$menu_locations = get_theme_mod('nav_menu_locations');
 try {
     wp_update_post(array('ID' => $page->ID, 'post_content' => $sentinel));
     $again = vniipo_scaffold();
     vniipo_assert($again['created'] === 0, 'Повторный запуск создал дубли');
     vniipo_assert(get_post($page->ID)->post_content === $sentinel, 'Перезаписан редакторский контент');
+    vniipo_assert(get_option('page_on_front') === $front_page, 'Scaffold изменил главную без явного параметра');
+    vniipo_assert(get_theme_mod('nav_menu_locations') === $menu_locations, 'Scaffold изменил назначенное меню');
 } finally { wp_update_post(array('ID' => $page->ID, 'post_content' => $original)); }
+$faq = vniipo_page_by_key('faq');
+try {
+    wp_update_post(array('ID' => $faq->ID, 'post_status' => 'trash'));
+    $blocked = false;
+    try { vniipo_scaffold(); } catch (RuntimeException $error) { $blocked = strpos($error->getMessage(), 'корзине') !== false; }
+    vniipo_assert($blocked, 'Scaffold повторно создал страницу из корзины');
+} finally { wp_update_post(array('ID' => $faq->ID, 'post_status' => 'publish', 'post_name' => $faq->post_name)); }
 foreach (vniipo_structure()['pages'] as $item) {
     $p = vniipo_page_by_key($item['key']);
     vniipo_assert($p !== null, 'Нет страницы ' . $item['key']);
