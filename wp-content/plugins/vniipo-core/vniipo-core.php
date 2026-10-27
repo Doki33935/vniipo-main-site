@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VNIIPO Core
  * Description: Структура, документы и вопросы основного сайта Оренбургского филиала ВНИИПО.
- * Version: 0.3.0
+ * Version: 0.4.0
  * Requires at least: 6.9
  * Requires PHP: 8.3
  * Text Domain: vniipo
@@ -13,6 +13,9 @@ define('VNIIPO_CORE_DIR', __DIR__);
 require_once __DIR__ . '/includes/structure.php';
 require_once __DIR__ . '/includes/information-blocks.php';
 require_once __DIR__ . '/includes/source-content.php';
+require_once __DIR__ . '/includes/editorial.php';
+require_once __DIR__ . '/includes/site-settings.php';
+require_once __DIR__ . '/includes/languages.php';
 
 function vniipo_register_content_types() {
     foreach (array('vniipo_document' => array('Документы', 'Документ'), 'vniipo_faq' => array('Вопросы и ответы', 'Вопрос и ответ'), 'vniipo_banner' => array('Анонсы и баннеры', 'Анонс')) as $type => $labels) {
@@ -22,7 +25,7 @@ function vniipo_register_content_types() {
             'show_in_rest' => true,
             'has_archive' => false,
             'rewrite' => array('slug' => array('vniipo_document' => 'document', 'vniipo_faq' => 'question', 'vniipo_banner' => 'announcement')[$type]),
-            'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+            'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields'),
             'menu_icon' => $type === 'vniipo_document' ? 'dashicons-media-document' : 'dashicons-format-status',
         ));
     }

@@ -110,7 +110,7 @@
         63,
         63
       ],
-      "external": "https://vniipo.ru/"
+      "external": "https://vniipo.ru/institut/ofitsialnaya-simvolika-instituta/"
     },
     {
       "key": "history",
@@ -211,7 +211,7 @@
         76,
         82
       ],
-      "external": "https://vniipo.ru/",
+      "external": "https://vniipo.ru/deyatelnost/obrascheniya-grazhdan/",
       "external_note": "Точный адрес электронной приёмной требуется уточнить"
     },
     {
@@ -330,7 +330,8 @@
       "source": [
         92,
         92
-      ]
+      ],
+      "listing": "vniipo_album"
     },
     {
       "key": "research",
@@ -600,6 +601,17 @@
       "path": "/branch/activities/types/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot/",
       "title": "Выполнение прикладных научно-исследовательских работ",
       "source_url": "https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot"
+    },
+    {
+      "key": "technical-regulation",
+      "title": "Техническое регулирование в области пожарной безопасности",
+      "path": "/branch/activities/technical-regulation/",
+      "source": [
+        50,
+        50
+      ],
+      "listing": "vniipo_document",
+      "document_category": "technical-regulation"
     }
   ],
   "links": [

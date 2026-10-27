@@ -66,10 +66,14 @@
             <?php endif; wp_reset_postdata(); ?>
         </section>
         <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('home-bottom'); } ?>
+        <?php if (function_exists('vniipo_render_gallery')) : ?>
+            <section class="vn-home-section"><div class="vn-section-head"><h2><?php esc_html_e('Виды полигона', 'vniipo'); ?></h2><a href="<?php echo esc_url(vniipo_main_url('media')); ?>"><?php esc_html_e('Фото и видеоархив', 'vniipo'); ?> →</a></div><?php vniipo_render_gallery(); ?><p class="vn-source-note"><a href="https://oren.vniipo.ru/poligon/">oren.vniipo.ru</a></p></section>
+        <?php endif; ?>
     </div>
 
     <aside class="vn-home-sidebar" aria-label="<?php esc_attr_e('Информация и сервисы', 'vniipo'); ?>">
         <?php if (function_exists('vniipo_render_information_blocks')) { vniipo_render_information_blocks('sidebar'); } ?>
+        <?php if (function_exists('vniipo_render_social_links')) { vniipo_render_social_links(); } ?>
         <section class="vn-sidebox"><h2><?php esc_html_e('Поиск по сайту', 'vniipo'); ?></h2><div class="vn-sidebox-body"><?php get_search_form(); ?></div></section>
         <a class="vn-appeal-banner" href="<?php echo esc_url(vniipo_main_url('appeals')); ?>"><span><?php esc_html_e('Обращения граждан', 'vniipo'); ?></span><small><?php esc_html_e('Порядок обращения и личного приёма', 'vniipo'); ?></small><b aria-hidden="true">→</b></a>
         <section class="vn-sidebox"><h2><?php esc_html_e('Информация для посетителей', 'vniipo'); ?></h2><ul class="vn-side-links">

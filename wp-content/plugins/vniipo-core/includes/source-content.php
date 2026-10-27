@@ -63,6 +63,7 @@ add_filter('the_content', static function ($content) {
 }, 12);
 
 function vniipo_render_source_page($key) {
+    if (function_exists('pll_current_language') && pll_current_language() && pll_current_language() !== 'ru' && !(function_exists('vniipo_preview_is_active') && vniipo_preview_is_active())) { return false; }
     $record = vniipo_source_page_record($key);
     if (!$record) { return false; }
     echo vniipo_source_html($record) . vniipo_source_note($record);
@@ -71,14 +72,21 @@ function vniipo_render_source_page($key) {
 
 function vniipo_render_contact_summary() {
     $contacts = vniipo_source_snapshot()['contacts'] ?? array();
+    if (function_exists('vniipo_site_settings')) {
+        $settings = vniipo_site_settings();
+        if (!empty($settings['address'])) { $contacts['department_address'] = $settings['address']; }
+        if (!empty($settings['phones'])) { $contacts['phones'] = preg_split('/\r?\n/', $settings['phones'], -1, PREG_SPLIT_NO_EMPTY); }
+        if (!empty($settings['hours'])) { $contacts['hours'] = $settings['hours']; }
+    }
     if (!$contacts) { return false; }
-    if (!empty($contacts['department_address'])) { echo '<p><strong>Научно-исследовательский отдел</strong><br>' . esc_html($contacts['department_address']) . '</p>'; }
+    if (!empty($contacts['department_address'])) { echo '<p><strong>' . esc_html(!empty($settings['address']) ? __('Филиал', 'vniipo') : __('Научно-исследовательский отдел', 'vniipo')) . '</strong><br>' . esc_html($contacts['department_address']) . '</p>'; }
     foreach ($contacts['phones'] ?? array() as $phone) { echo '<p class="vn-contact-phone"><a href="tel:' . esc_attr(preg_replace('/[^+0-9]/', '', $phone)) . '">' . esc_html($phone) . '</a></p>'; }
-    if (!empty($contacts['hours'])) { echo '<p>' . esc_html($contacts['hours']) . '</p>'; }
+    if (!empty($contacts['hours'])) { echo '<p>' . esc_html(__($contacts['hours'], 'vniipo')) . '</p>'; }
     return true;
 }
 
 function vniipo_render_source_blocks($area) {
+    if (function_exists('pll_current_language') && pll_current_language() && pll_current_language() !== 'ru') { return; }
     foreach (vniipo_source_snapshot()['records'] as $record) {
         if ($record['kind'] !== 'block' || $record['area'] !== $area) { continue; }
         $existing = get_posts(array('post_type' => 'vniipo_block', 'post_status' => array_values(get_post_stati()), 'meta_key' => '_vniipo_source_uid', 'meta_value' => $record['uid'], 'posts_per_page' => 1, 'fields' => 'ids'));
@@ -88,6 +96,7 @@ function vniipo_render_source_blocks($area) {
 }
 
 function vniipo_source_news_fallback() {
+    if (function_exists('pll_current_language') && pll_current_language() && pll_current_language() !== 'ru') { return false; }
     static $fallback;
     if ($fallback === null) {
         $imported = get_posts(array('post_type' => 'post', 'post_status' => array_values(get_post_stati()), 'meta_key' => '_vniipo_source_uid', 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => true));

@@ -1,0 +1,8 @@
+{
+  "name": "Polylang",
+  "version": "3.9.1",
+  "url": "https://downloads.wordpress.org/plugin/polylang.3.9.1.zip",
+  "sha256": "b09aa8b3d92a882b1d5e24ca2c729981e8ac07d4403f78d4a6853899b20f9266",
+  "license": "GPL-3.0-or-later",
+  "optional_for_russian_site": true
+}

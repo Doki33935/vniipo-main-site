@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VNIIPO Private Preview
  * Description: Закрытый просмотр основного сайта администраторами без смены публичной темы и создания страниц.
- * Version: 0.2.0
+ * Version: 0.4.0
  * Requires at least: 6.9
  * Requires PHP: 7.3
  * Text Domain: vniipo
@@ -105,7 +105,7 @@ function vniipo_preview_render() {
     }
     if (isset($_GET['s']) && preg_match('~^/(?:page/([1-9][0-9]*)/)?$~', $path, $search_page)) {
         $search = sanitize_text_field(wp_unslash($_GET['s']));
-        vniipo_preview_set_query(new WP_Query(array('s' => $search, 'post_type' => array('post', 'page', 'conference', 'vniipo_document', 'vniipo_faq'), 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => isset($search_page[1]) ? (int) $search_page[1] : 1)));
+        vniipo_preview_set_query(new WP_Query(array('s' => $search, 'post_type' => array('post', 'page', 'conference', 'vniipo_document', 'vniipo_faq', 'vniipo_album'), 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => isset($search_page[1]) ? (int) $search_page[1] : 1)));
         $GLOBALS['vniipo_preview_title'] = 'Поиск: ' . $search;
         include get_stylesheet_directory() . '/index.php';
         exit;
@@ -133,7 +133,7 @@ function vniipo_preview_render() {
     if (!preg_match('~^/(editor(?:/|$)|registration(?:/|$)|partnership(?:/|$)|wp-)~', $path)) {
         $id = url_to_postid(home_url($path));
         $post = $id ? get_post($id) : null;
-        if ($post && $post->post_status === 'publish' && in_array($post->post_type, array('post', 'page', 'conference', 'vniipo_document', 'vniipo_faq', 'vniipo_banner'), true)) {
+        if ($post && $post->post_status === 'publish' && in_array($post->post_type, array('post', 'page', 'conference', 'vniipo_document', 'vniipo_faq', 'vniipo_banner', 'vniipo_album'), true)) {
             vniipo_preview_set_query(new WP_Query(array('p' => $post->ID, 'post_type' => $post->post_type, 'post_status' => 'publish')));
             $GLOBALS['vniipo_preview_title'] = $post->post_title;
             include $post->post_type === 'conference' ? get_template_directory() . '/single-conference.php' : get_stylesheet_directory() . '/index.php';

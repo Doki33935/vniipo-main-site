@@ -30,4 +30,4 @@ const response = await fetch(new URL('/wp-content/plugins/vniipo-core/content/so
 assert.equal(response.status, 200);
 assert(response.headers.get('content-type')?.startsWith('image/'));
 passed++;
-console.log(`PASS: ${passed} source HTTP checks: branding order, 34 populated pages, contacts, news, source block and bundled image.`);
+console.log(`PASS: ${passed} source HTTP checks: branding order, ${snapshot.records.filter(record => record.kind === 'page').length} populated pages, contacts, news, source block and bundled image.`);

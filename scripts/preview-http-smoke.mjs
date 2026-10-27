@@ -6,7 +6,9 @@ const state = JSON.parse(await readFile(process.argv[2] || '.local/preview-test-
 const structure = JSON.parse(await readFile(new URL('../wp-content/plugins/vniipo-core/content/structure.json', import.meta.url), 'utf8'));
 let passed = 0;
 async function request(route, { cookie, status = 200, marker, method = 'GET' } = {}) {
-  const response = await fetch(new URL(route, base), { redirect: 'manual', method, headers: cookie ? { Cookie: cookie } : {}, signal: AbortSignal.timeout(15000) });
+  let response;
+  try { response = await fetch(new URL(route, base), { redirect: 'manual', method, headers: cookie ? { Cookie: cookie } : {}, signal: AbortSignal.timeout(15000) }); }
+  catch (error) { throw new Error(`${method} ${route}: ${error.message}`, { cause: error }); }
   assert.equal(response.status, status, `${method} ${route}`);
   const text = await response.text();
   if (marker) assert(text.includes(marker), `${route}: ${marker}`);

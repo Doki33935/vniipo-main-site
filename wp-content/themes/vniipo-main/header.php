@@ -14,7 +14,7 @@
         <a href="https://vniipo.ru/"><?php esc_html_e('Официальный сайт ВНИИПО', 'vniipo'); ?> ↗</a>
         <div class="vn-utility-links">
             <?php if (function_exists('pll_the_languages')) : ?>
-                <ul class="vn-languages" aria-label="<?php esc_attr_e('Язык сайта', 'vniipo'); ?>"><?php pll_the_languages(array('show_flags' => 0, 'show_names' => 1, 'hide_if_no_translation' => 1)); ?></ul>
+                <ul class="vn-languages" aria-label="<?php esc_attr_e('Язык сайта', 'vniipo'); ?>"><?php pll_the_languages(array('show_flags' => false, 'show_labels' => 'names', 'show_wrapper' => false, 'layout' => 'horizontal', 'hide_if_no_translation' => true)); ?></ul>
             <?php endif; ?>
             <a href="<?php echo esc_url(home_url('/editor/login/')); ?>"><?php esc_html_e('Вход для сотрудников', 'vniipo'); ?></a>
         </div>
@@ -42,6 +42,7 @@
         </nav>
     </div></div>
 </header>
+<?php if (function_exists('vniipo_language_notice')) : ?><div class="vn-wrap"><?php vniipo_language_notice(); ?></div><?php endif; ?>
 <?php if (wp_get_environment_type() === 'local' && !(function_exists('vniipo_preview_is_active') && vniipo_preview_is_active())) : ?>
     <div class="vn-wrap"><p class="vn-demo-note"><?php esc_html_e('Проект нового сайта. Материалы разделов заполняются и проверяются перед публикацией.', 'vniipo'); ?></p></div>
 <?php endif; ?>

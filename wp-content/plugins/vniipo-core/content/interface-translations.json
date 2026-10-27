@@ -1,0 +1,386 @@
+{
+  "Анонсы мероприятий": {
+    "en_US": "Event announcements",
+    "zh_TW": "活動公告"
+  },
+  "В этом разделе пока нет опубликованных материалов.": {
+    "en_US": "No materials have been published in this section yet.",
+    "zh_TW": "本欄目暫無已發佈資料。"
+  },
+  "Вернуться к просмотру": {
+    "en_US": "Return to preview",
+    "zh_TW": "返回預覽"
+  },
+  "Вопрос — ответ": {
+    "en_US": "Questions and answers",
+    "zh_TW": "常見問題"
+  },
+  "Воспользуйтесь поиском или перейдите на главную страницу.": {
+    "en_US": "Use the search or return to the home page.",
+    "zh_TW": "請使用搜尋功能或返回首頁。"
+  },
+  "Все контакты": {
+    "en_US": "All contact details",
+    "zh_TW": "所有聯絡方式"
+  },
+  "Все материалы": {
+    "en_US": "All materials",
+    "zh_TW": "所有資料"
+  },
+  "Все мероприятия": {
+    "en_US": "All events",
+    "zh_TW": "所有活動"
+  },
+  "Все новости": {
+    "en_US": "All news",
+    "zh_TW": "所有新聞"
+  },
+  "Всероссийский научно-исследовательский институт противопожарной обороны": {
+    "en_US": "All-Russian Research Institute for Fire Protection",
+    "zh_TW": "全俄消防科學研究所"
+  },
+  "Вход для сотрудников": {
+    "en_US": "Staff login",
+    "zh_TW": "工作人員登入"
+  },
+  "Главная": {
+    "en_US": "Home",
+    "zh_TW": "首頁"
+  },
+  "Дата уточняется": {
+    "en_US": "Date to be confirmed",
+    "zh_TW": "日期待確認"
+  },
+  "Действующий портал конференций": {
+    "en_US": "Current conference portal",
+    "zh_TW": "現有會議入口網站"
+  },
+  "Здесь администраторы знакомятся с оформлением и структурой нового сайта. Регистрация, отправка заявок и работа кабинетов остаются в действующем конференционном сервисе.": {
+    "en_US": "Administrators can review the new site here. Registration, applications and staff accounts remain available in the current conference service.",
+    "zh_TW": "管理員可在此查看新網站的設計及架構。註冊、申請及工作帳戶仍由現有會議服務提供。"
+  },
+  "Информационные разделы": {
+    "en_US": "Information sections",
+    "zh_TW": "資訊欄目"
+  },
+  "Информация для посетителей": {
+    "en_US": "Visitor information",
+    "zh_TW": "訪客資訊"
+  },
+  "Информация и сервисы": {
+    "en_US": "Information and services",
+    "zh_TW": "資訊與服務"
+  },
+  "Информация о полигоне филиала": {
+    "en_US": "About the branch testing ground",
+    "zh_TW": "分部試驗場資訊"
+  },
+  "Информация о филиале": {
+    "en_US": "About the branch",
+    "zh_TW": "關於分部"
+  },
+  "Испытательная лаборатория, полигон и сертификация.": {
+    "en_US": "Testing laboratory, testing ground and certification.",
+    "zh_TW": "試驗室、試驗場及認證。"
+  },
+  "Испытательный полигон": {
+    "en_US": "Testing ground",
+    "zh_TW": "試驗場"
+  },
+  "Контактная информация": {
+    "en_US": "Contact information",
+    "zh_TW": "聯絡資訊"
+  },
+  "Контакты": {
+    "en_US": "Contacts",
+    "zh_TW": "聯絡方式"
+  },
+  "Контакты филиала, реквизиты и порядок обращения граждан.": {
+    "en_US": "Branch contacts, institutional details and public enquiries.",
+    "zh_TW": "分部聯絡方式、機構資料及公眾申請程序。"
+  },
+  "Конференции и выставки": {
+    "en_US": "Conferences and exhibitions",
+    "zh_TW": "會議與展覽"
+  },
+  "Конференции и мероприятия": {
+    "en_US": "Conferences and events",
+    "zh_TW": "會議與活動"
+  },
+  "МЧС России — официальный сайт": {
+    "en_US": "EMERCOM of Russia — official website",
+    "zh_TW": "俄羅斯緊急情況部官方網站"
+  },
+  "Материалы не найдены. Попробуйте другой запрос.": {
+    "en_US": "No materials found. Try another search.",
+    "zh_TW": "找不到資料，請嘗試其他關鍵字。"
+  },
+  "Материалы раздела готовятся к публикации.": {
+    "en_US": "Materials for this section are being prepared for publication.",
+    "zh_TW": "本欄目資料正在準備發佈。"
+  },
+  "Меню": {
+    "en_US": "Menu",
+    "zh_TW": "選單"
+  },
+  "На главную": {
+    "en_US": "Home",
+    "zh_TW": "首頁"
+  },
+  "На главную страницу": {
+    "en_US": "Go to home page",
+    "zh_TW": "前往首頁"
+  },
+  "Найти": {
+    "en_US": "Search",
+    "zh_TW": "搜尋"
+  },
+  "Наука · Испытания · Образование": {
+    "en_US": "Research · Testing · Education",
+    "zh_TW": "研究 · 試驗 · 教育"
+  },
+  "Научно-исследовательская, образовательная и конгрессно-выставочная деятельность в области пожарной безопасности.": {
+    "en_US": "Research, education, conferences and exhibitions in fire safety.",
+    "zh_TW": "消防安全領域的科學研究、教育、會議及展覽。"
+  },
+  "Научные исследования": {
+    "en_US": "Research",
+    "zh_TW": "科學研究"
+  },
+  "Новости": {
+    "en_US": "News",
+    "zh_TW": "新聞"
+  },
+  "Новости появятся после публикации редактором.": {
+    "en_US": "News will appear here once published by an editor.",
+    "zh_TW": "編輯發佈新聞後將顯示於此。"
+  },
+  "Новости филиала": {
+    "en_US": "Branch news",
+    "zh_TW": "分部新聞"
+  },
+  "Новые документы": {
+    "en_US": "New documents",
+    "zh_TW": "最新文件"
+  },
+  "О мероприятии": {
+    "en_US": "Event details",
+    "zh_TW": "活動詳情"
+  },
+  "Обработка персональных данных": {
+    "en_US": "Personal data processing",
+    "zh_TW": "個人資料處理"
+  },
+  "Образовательная деятельность": {
+    "en_US": "Education",
+    "zh_TW": "教育活動"
+  },
+  "Обращения граждан": {
+    "en_US": "Public enquiries",
+    "zh_TW": "公眾申請"
+  },
+  "Опубликованные конференции появятся здесь после подключения контента портала.": {
+    "en_US": "Published conferences will appear here once portal content is connected.",
+    "zh_TW": "連接入口網站內容後，已發佈的會議將顯示於此。"
+  },
+  "Оренбургский филиал": {
+    "en_US": "Orenburg branch",
+    "zh_TW": "奧倫堡分部"
+  },
+  "Основная навигация": {
+    "en_US": "Main navigation",
+    "zh_TW": "主導覽"
+  },
+  "Основные направления": {
+    "en_US": "Main areas of work",
+    "zh_TW": "主要工作領域"
+  },
+  "Открыть действующий сайт": {
+    "en_US": "Open current website",
+    "zh_TW": "開啟現有網站"
+  },
+  "Открыть официальный ресурс": {
+    "en_US": "Open official resource",
+    "zh_TW": "開啟官方資源"
+  },
+  "Официальный сайт ВНИИПО": {
+    "en_US": "Official VNIIPO website",
+    "zh_TW": "VNIIPO 官方網站"
+  },
+  "Перейти к содержимому": {
+    "en_US": "Skip to content",
+    "zh_TW": "跳至主要內容"
+  },
+  "Перейти на сайт ВНИИПО": {
+    "en_US": "Visit the VNIIPO website",
+    "zh_TW": "前往 VNIIPO 網站"
+  },
+  "Подробнее": {
+    "en_US": "Learn more",
+    "zh_TW": "了解更多"
+  },
+  "Поиск по сайту": {
+    "en_US": "Search the site",
+    "zh_TW": "搜尋網站"
+  },
+  "Поиск: %s": {
+    "en_US": "Search: %s",
+    "zh_TW": "搜尋：%s"
+  },
+  "Порядок обращения и личного приёма": {
+    "en_US": "Enquiries and personal appointments",
+    "zh_TW": "申請及面談程序"
+  },
+  "Проект нового сайта. Материалы разделов заполняются и проверяются перед публикацией.": {
+    "en_US": "New website project. Section materials are being prepared and reviewed before publication.",
+    "zh_TW": "新網站專案。各欄目資料正在填寫並於發佈前進行審核。"
+  },
+  "Противодействие коррупции": {
+    "en_US": "Anti-corruption",
+    "zh_TW": "反貪腐"
+  },
+  "Противодействие терроризму": {
+    "en_US": "Counter-terrorism",
+    "zh_TW": "反恐"
+  },
+  "Публикации": {
+    "en_US": "Publications",
+    "zh_TW": "出版與發佈"
+  },
+  "Разделы сайта": {
+    "en_US": "Site sections",
+    "zh_TW": "網站欄目"
+  },
+  "Реквизиты": {
+    "en_US": "Institutional details",
+    "zh_TW": "機構資料"
+  },
+  "Сведения об образовательной деятельности филиала.": {
+    "en_US": "Information about the branch educational activities.",
+    "zh_TW": "分部教育活動資訊。"
+  },
+  "Семинары, круглые столы и научные мероприятия.": {
+    "en_US": "Seminars, round tables and research events.",
+    "zh_TW": "研討會、圓桌會議及學術活動。"
+  },
+  "Сертификация": {
+    "en_US": "Certification",
+    "zh_TW": "認證"
+  },
+  "Система добровольной сертификации МЧС России": {
+    "en_US": "EMERCOM of Russia voluntary certification system",
+    "zh_TW": "俄羅斯緊急情況部自願認證制度"
+  },
+  "Ссылки в подвале": {
+    "en_US": "Footer links",
+    "zh_TW": "頁尾連結"
+  },
+  "Страница не найдена": {
+    "en_US": "Page not found",
+    "zh_TW": "找不到頁面"
+  },
+  "Формы в предпросмотре отключены": {
+    "en_US": "Forms are disabled in preview",
+    "zh_TW": "預覽模式已停用表單"
+  },
+  "Читайте также": {
+    "en_US": "See also",
+    "zh_TW": "另請參閱"
+  },
+  "Язык сайта": {
+    "en_US": "Site language",
+    "zh_TW": "網站語言"
+  },
+  "Номер": {
+    "en_US": "Number",
+    "zh_TW": "編號"
+  },
+  "Дата документа": {
+    "en_US": "Document date",
+    "zh_TW": "文件日期"
+  },
+  "Редакция": {
+    "en_US": "Revision",
+    "zh_TW": "版本"
+  },
+  "Скачать документ": {
+    "en_US": "Download document",
+    "zh_TW": "下載文件"
+  },
+  "Официальный источник": {
+    "en_US": "Official source",
+    "zh_TW": "官方來源"
+  },
+  "Карусель": {
+    "en_US": "Carousel",
+    "zh_TW": "輪播圖"
+  },
+  "Виды полигона": {
+    "en_US": "Views of the testing ground",
+    "zh_TW": "試驗場影像"
+  },
+  "%1$d из %2$d": {
+    "en_US": "%1$d of %2$d",
+    "zh_TW": "第 %1$d 張，共 %2$d 張"
+  },
+  "Предыдущее фото": {
+    "en_US": "Previous photo",
+    "zh_TW": "上一張照片"
+  },
+  "Следующее фото": {
+    "en_US": "Next photo",
+    "zh_TW": "下一張照片"
+  },
+  "Источник фотографий: oren.vniipo.ru": {
+    "en_US": "Photo source: oren.vniipo.ru",
+    "zh_TW": "照片來源：oren.vniipo.ru"
+  },
+  "Актуальные контакты": {
+    "en_US": "Current contact details",
+    "zh_TW": "最新聯絡方式"
+  },
+  "Мы в Яндекс Картах": {
+    "en_US": "Find us on Yandex Maps",
+    "zh_TW": "在 Yandex 地圖上查看"
+  },
+  "Мы в соцсетях": {
+    "en_US": "Social media",
+    "zh_TW": "社群媒體"
+  },
+  "Раздел документов": {
+    "en_US": "Document category",
+    "zh_TW": "文件分類"
+  },
+  "Все документы": {
+    "en_US": "All documents",
+    "zh_TW": "所有文件"
+  },
+  "Показать": {
+    "en_US": "Show",
+    "zh_TW": "顯示"
+  },
+  "Связаться с филиалом": {
+    "en_US": "Contact the branch",
+    "zh_TW": "聯絡分部"
+  },
+  "Фото и видеоархив": {
+    "en_US": "Photo and video archive",
+    "zh_TW": "照片與影片檔案"
+  },
+  "Некоторые материалы и конференционный сервис доступны на русском языке.": {
+    "en_US": "Some materials and the conference service are available in Russian.",
+    "zh_TW": "部分資料及會議服務以俄語提供。"
+  },
+  "Научно-исследовательский отдел": {
+    "en_US": "Research department",
+    "zh_TW": "科學研究部門"
+  },
+  "Филиал": {
+    "en_US": "Branch",
+    "zh_TW": "分部"
+  },
+  "ПН-ПТ с 09:00 до 18:00; СБ-ВС: выходной": {
+    "en_US": "Monday–Friday 09:00–18:00; closed on Saturday and Sunday",
+    "zh_TW": "星期一至五 09:00–18:00；星期六、日休息"
+  }
+}

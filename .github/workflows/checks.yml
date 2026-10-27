@@ -31,6 +31,7 @@ jobs:
         run: |
           docker compose run --rm cli eval-file /opt/vniipo/smoke.php
           docker compose run --rm cli eval-file /opt/vniipo/source-blocks-smoke.php
+          docker compose run --rm cli eval-file /opt/vniipo/editorial-smoke.php
           docker compose run --rm cli eval-file /opt/vniipo/fixtures.php
           node scripts/http-smoke.mjs
           node scripts/source-http-smoke.mjs
@@ -55,6 +56,24 @@ jobs:
           if [ -f .local/preview-test-state.json ]; then
             docker compose run --rm -v "$PWD/.local:/opt/test-state" cli eval-file /opt/vniipo/preview-smoke.php cleanup /opt/test-state/preview-test-state.json
             rm .local/preview-test-state.json
+          fi
+      - name: Fetch verified language dependency
+        shell: pwsh
+        run: ./scripts/fetch-language-plugin.ps1
+      - name: Verify multilingual setup on the isolated site
+        run: |
+          docker compose run --rm -v "$PWD/dist/languages:/opt/languages:ro" cli plugin install /opt/languages/polylang.3.9.1.zip --activate
+          docker compose run --rm cli eval-file /opt/vniipo/prepare-languages.php apply
+          docker compose run --rm cli eval-file /opt/vniipo/prepare-languages.php apply
+          docker compose run --rm cli eval-file /opt/vniipo/language-smoke.php prepare > .local/language-test-state.json
+          node scripts/language-http-smoke.mjs
+          docker compose exec -T wordpress sh -c 'if [ -s wp-content/debug.log ]; then cat wp-content/debug.log; exit 1; fi'
+      - name: Restore translation draft statuses
+        if: always()
+        run: |
+          if [ -f .local/language-test-state.json ]; then
+            docker compose run --rm -v "$PWD/.local:/opt/test-state" cli eval-file /opt/vniipo/language-smoke.php cleanup /opt/test-state/language-test-state.json
+            rm .local/language-test-state.json
           fi
       - name: Remove test content
         if: always()

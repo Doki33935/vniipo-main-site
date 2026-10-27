@@ -62,6 +62,16 @@ for (const name of files) {
 const theme = await read('wp-content/themes/vniipo-main/style.css');
 assert(theme.includes('Template: fyremezzonine-wp-theme'));
 const snapshot = JSON.parse(await read('wp-content/plugins/vniipo-core/content/oren-source.json'));
+const translations = JSON.parse(await read('wp-content/plugins/vniipo-core/content/interface-translations.json'));
+for (const [message, locales] of Object.entries(translations)) {
+  for (const locale of ['en_US', 'zh_TW']) {
+    assert(typeof locales[locale] === 'string' && locales[locale].length, `Missing ${locale}: ${message}`);
+    assert.deepEqual(locales[locale].match(/%\d?\$?[sd]/g) || [], message.match(/%\d?\$?[sd]/g) || [], `Format placeholders: ${message}`);
+  }
+}
+const languageLock = JSON.parse(await read('docs/language-dependency.json'));
+assert.equal(new URL(languageLock.url).hostname, 'downloads.wordpress.org');
+assert(/^[a-f0-9]{64}$/.test(languageLock.sha256));
 const sourceIds = new Set();
 for (const record of snapshot.records) {
   assert(!sourceIds.has(record.uid), `Duplicate source UID: ${record.uid}`);

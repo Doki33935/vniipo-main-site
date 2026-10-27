@@ -1,0 +1,82 @@
+{
+  "home": {
+    "en": {
+      "title": "ФГБУ ВНИИПО МЧС России — Orenburg branch",
+      "text": "Research, testing, education, conferences and exhibitions in fire safety. The official institutional name is retained in Russian."
+    },
+    "zh-hant": {
+      "title": "ФГБУ ВНИИПО МЧС России — 奧倫堡分部",
+      "text": "提供消防安全領域的科學研究、試驗、教育、會議及展覽資訊。機構官方名稱保留俄語。"
+    }
+  },
+  "branch": {
+    "en": {
+      "title": "About the branch",
+      "text": "The Orenburg branch is a structural unit of the All-Russian Research Institute for Fire Protection of EMERCOM of Russia. Its work includes fire safety research and the development and implementation of fire protection equipment."
+    },
+    "zh-hant": {
+      "title": "關於分部",
+      "text": "奧倫堡分部隸屬於俄羅斯緊急情況部全俄消防科學研究所，從事消防安全研究，以及消防設備的研發與應用。"
+    }
+  },
+  "research": {
+    "en": {
+      "title": "Research",
+      "text": "This section brings together research activities, information about the testing ground and the section of the Scientific and Technical Council. Detailed source materials are available in Russian."
+    },
+    "zh-hant": {
+      "title": "科學研究",
+      "text": "本欄目彙集科學研究活動、試驗場及科學技術委員會分組的資訊。詳細原始資料以俄語提供。"
+    }
+  },
+  "education": {
+    "en": {
+      "title": "Education",
+      "text": "The branch publishes information about additional professional education and occupational safety training. The educational information section contains institutional details, documents, programmes and other published information."
+    },
+    "zh-hant": {
+      "title": "教育活動",
+      "text": "分部公佈繼續專業教育及職業安全培訓資訊。教育資訊欄目包含機構資料、文件、課程及其他已公開資訊。"
+    }
+  },
+  "congress": {
+    "en": {
+      "title": "Conferences and exhibitions",
+      "text": "Conference information, registration and staff accounts are provided by the existing conference service. Conference records and applications remain in their original system until the planned migration is completed."
+    },
+    "zh-hant": {
+      "title": "會議與展覽",
+      "text": "會議資訊、註冊及工作帳戶由現有會議服務提供。完成計畫中的資料遷移前，會議及申請紀錄仍保留於原系統。"
+    }
+  },
+  "contacts": {
+    "en": {
+      "title": "Contacts",
+      "text": "Contact details and institutional information are published in the contact and institutional details sections. Please refer to the Russian source for the original information."
+    },
+    "zh-hant": {
+      "title": "聯絡方式",
+      "text": "聯絡方式及機構資訊公佈於相應欄目。原始資訊請參閱俄語來源。"
+    }
+  },
+  "contact-info": {
+    "en": {
+      "title": "Contact information",
+      "text": "The Russian source lists the Research Department at 97 Sovetskaya Street, Orenburg, 460006. Telephone numbers: +7 (3532) 57-22-95, 57-24-84 and 57-27-15. The displayed email differs from the mailto link on the source page; the email address requires confirmation."
+    },
+    "zh-hant": {
+      "title": "聯絡資訊",
+      "text": "俄語來源列出的科學研究部門地址為：460006，奧倫堡市，蘇維埃街 97 號。電話：+7 (3532) 57-22-95、57-24-84、57-27-15。來源頁面顯示的電子郵件地址與郵件連結不同，電子郵件地址仍需確認。"
+    }
+  },
+  "testing-ground": {
+    "en": {
+      "title": "Testing ground",
+      "text": "The branch testing ground supports scientific experiments, research and training in fire prevention and firefighting. It is used for full-scale testing of fire protection equipment and technologies. The Russian source describes a 30-hectare site with more than 40 full-scale models and supporting facilities."
+    },
+    "zh-hant": {
+      "title": "試驗場",
+      "text": "分部試驗場用於防火與滅火領域的科學實驗、研究及培訓，並對消防設備及技術進行全尺寸試驗。俄語來源描述該場地面積為 30 公頃，設有超過 40 個全尺寸模型及配套設施。"
+    }
+  }
+}

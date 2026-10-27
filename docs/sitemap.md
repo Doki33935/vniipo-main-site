@@ -1,8 +1,8 @@
 # Карта разделов сайта
 
-Реестр: `wp-content/plugins/vniipo-core/content/structure.json`. Версия 0.3.0: 73 страницы, шесть пунктов основного меню. Номера абзацев относятся к `specification-source.txt`; дополнительные разделы имеют ссылку на действующий сайт.
+Версия 0.4.0: 74 страницы, шесть пунктов основного меню. Реестр — `wp-content/plugins/vniipo-core/content/structure.json`. Абзацы относятся к исходному ТЗ; дополнительные разделы имеют источник.
 
-| Раздел | URL нового сайта | Основание |
+| Раздел | URL | Основание |
 | --- | --- | --- |
 | Главная | `/` | Абзацы 3–50 |
 | Филиал | `/branch/` | Абзацы 51–92 |
@@ -77,6 +77,7 @@
 | Расчет пожарных рисков и другие пожарно-технические расчеты | `/branch/activities/types/raschet-pozharnyh-riskov-i-drugie-pozharno-tehnicheskie-raschety/` | [oren.vniipo.ru](https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/raschet-pozharnyh-riskov-i-drugie-pozharno-tehnicheskie-raschety) |
 | Разработка специальных технических условий на проектирование уникальных и сложных объектов строительства Проектирование систем п | `/branch/activities/types/razrabotka-special-nyh-tehnicheskih-usloviy-na-proektirovanie-unikal-nyh-i-slozhnyh-ob-ektov-stroitel-stva/` | [oren.vniipo.ru](https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/razrabotka-special-nyh-tehnicheskih-usloviy-na-proektirovanie-unikal-nyh-i-slozhnyh-ob-ektov-stroitel-stva) |
 | Выполнение прикладных научно-исследовательских работ | `/branch/activities/types/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot/` | [oren.vniipo.ru](https://oren.vniipo.ru/uslugi-v-oblasti-pozharnoy-bezopasnosti/vypolnenie-prikladnyh-nauchno-issledovatel-skih-rabot) |
+| Техническое регулирование в области пожарной безопасности | `/branch/activities/technical-regulation/` | Абзацы 50–50 |
 
 ## Повторное использование
 
@@ -95,4 +96,4 @@
 | `/branch/useful/regulations/` | `/branch/activities/regulations/` |
 | `/congress/conferences/` | `/conferences/` |
 
-Маршруты `/conferences/`, `/registration/`, `/partnership/` и `/editor/*` принадлежат конференционному модулю. Источники 34 заполненных страниц и сопоставление прежних адресов находятся в `content/oren-source.json`; рабочие 301 со старого домена включаются отдельно при согласованном переезде.
+Маршруты `/conferences/`, `/registration/`, `/partnership/` и `/editor/*` принадлежат конференционному модулю. Английские и традиционные китайские переводы используют связанные страницы Polylang, не дублируя реестр русских оригиналов.

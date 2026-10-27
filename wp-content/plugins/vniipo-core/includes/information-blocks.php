@@ -78,7 +78,7 @@ function vniipo_information_blocks_html($area, $page_key = '', $block_id = 0) {
     static $rendering = false;
     static $sequence = 0;
     if ($rendering || !isset(vniipo_block_areas()[$area])) { return ''; }
-    $args = array('post_type' => 'vniipo_block', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby' => array('menu_order' => 'ASC', 'ID' => 'ASC'), 'no_found_rows' => true);
+    $args = array('post_type' => 'vniipo_block', 'post_status' => 'publish', 'suppress_filters' => false, 'posts_per_page' => -1, 'orderby' => array('menu_order' => 'ASC', 'ID' => 'ASC'), 'no_found_rows' => true);
     if ($block_id) { $args['p'] = $block_id; }
     else { $args['meta_query'] = array(array('key' => '_vniipo_block_area', 'value' => $area)); }
     $blocks = get_posts($args);

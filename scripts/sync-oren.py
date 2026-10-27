@@ -16,6 +16,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse, urlunparse
 
 from lxml import etree, html
+from source_derivations import add_derived_records
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://oren.vniipo.ru/"
@@ -316,6 +317,7 @@ def main():
             media[url] = result
     snapshot = {"version": 1, "fetched_at": datetime.now(timezone.utc).isoformat(), "base_url": BASE, "archive_discovered": len(cards), "records": records, "media": media, "failures": failures, "links": mapping, "contacts": contacts,
         "notes": ["В шапке источника указан адрес на Советской 97, в блоке карты главной — Селивановский переулок 30/32. Новые контакты берутся со страницы Контакты с подписью Научно-исследовательский отдел.", "На странице Контакты подпись email of@vniipo.ru отличается от mailto of.vniipo@mail.ru. Требуется подтверждение владельцем; автоматическая подмена адреса не выполняется.", "Формы, исполняемые скрипты, карты и сторонние виджеты не перенесены. Галереи новостей доступны по ссылкам на оригинальные публикации."]}
+    add_derived_records(snapshot, structure)
     (DEST / "oren-source.json").write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     STRUCTURE.write_text(json.dumps(structure, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"records": len(records), "news": sum(r["kind"] == "post" for r in records), "pages": sum(r["kind"] == "page" for r in records), "structure": len(structure["pages"]), "local_media": sum(v["status"] == "local" for v in media.values()), "failures": failures}, ensure_ascii=False), flush=True)

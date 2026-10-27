@@ -17,12 +17,12 @@ function vniipo_page_definition($key) {
 }
 
 function vniipo_page_by_key($key) {
-    $ids = get_posts(array('post_type' => 'page', 'post_status' => 'publish', 'meta_key' => '_vniipo_key', 'meta_value' => $key, 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => true));
+    $ids = get_posts(array('post_type' => 'page', 'post_status' => 'publish', 'lang' => '', 'meta_key' => '_vniipo_key', 'meta_value' => $key, 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => true));
     return $ids ? get_post($ids[0]) : null;
 }
 
 function vniipo_url($key) {
-    $page = vniipo_page_by_key($key);
+    $page = function_exists('vniipo_translated_page') ? vniipo_translated_page($key) : vniipo_page_by_key($key);
     if ($page) { return get_permalink($page); }
     $definition = vniipo_page_definition($key);
     return $definition ? home_url($definition['path']) : home_url('/');

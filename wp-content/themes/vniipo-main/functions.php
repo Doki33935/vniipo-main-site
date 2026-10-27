@@ -39,10 +39,13 @@ function vniipo_main_url($key) {
 }
 
 function vniipo_site_url($path = '/') {
-    return function_exists('vniipo_preview_is_active') && vniipo_preview_is_active() ? vniipo_preview_url($path) : home_url($path);
+    if (function_exists('vniipo_preview_is_active') && vniipo_preview_is_active()) { return vniipo_preview_url($path); }
+    if ($path === '/' && function_exists('pll_home_url')) { return pll_home_url(); }
+    return home_url($path);
 }
 
 function vniipo_primary_navigation() {
+    if (function_exists('pll_current_language') && pll_current_language() && pll_current_language() !== 'ru') { vniipo_nav_fallback(); return; }
     if (function_exists('vniipo_preview_is_active') && vniipo_preview_is_active()) {
         vniipo_nav_fallback();
         return;
@@ -63,7 +66,7 @@ function vniipo_nav_fallback() {
     if (function_exists('vniipo_structure')) {
         foreach (vniipo_structure()['pages'] as $page) {
             if (!empty($page['menu'])) {
-                $title = esc_html($page['title']);
+                $title = esc_html(function_exists('vniipo_localized_title') ? vniipo_localized_title($page['key'], $page['title']) : $page['title']);
                 if ($page['key'] === 'home') {
                     $title = '<span class="vn-homepage-link"><svg class="vn-home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3 21 11M5 10v11h5v-7h4v7h5V10"/></svg><span class="vn-home-label">' . esc_html__('Главная', 'vniipo') . '</span></span>';
                 }
@@ -87,10 +90,23 @@ function vniipo_render_news($count = 3) {
     wp_reset_postdata();
 }
 
-function vniipo_render_listing($type) {
+function vniipo_render_listing($type, $category = '') {
+    if ($type === 'vniipo_album') { vniipo_render_media_archive(); return; }
     $paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
     if ($type === 'post' && function_exists('vniipo_source_news_fallback') && vniipo_source_news_fallback()) { vniipo_render_source_news(12, $paged); return; }
-    $query = new WP_Query(array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => $paged));
+    $query_args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => 12, 'paged' => $paged);
+    if ($type === 'vniipo_document') {
+        $fixed_category = $category !== '';
+        $category = $category ?: (isset($_GET['document_category']) && is_string($_GET['document_category']) ? sanitize_key(wp_unslash($_GET['document_category'])) : '');
+        $terms = get_terms(array('taxonomy' => 'vniipo_document_category', 'hide_empty' => true));
+        if (!$fixed_category && !is_wp_error($terms) && $terms) {
+            echo '<form method="get" class="vn-document-filter"><label for="vn-document-category">' . esc_html__('Раздел документов', 'vniipo') . '</label> <select name="document_category" id="vn-document-category"><option value="">' . esc_html__('Все документы', 'vniipo') . '</option>';
+            foreach ($terms as $term) { echo '<option value="' . esc_attr($term->slug) . '" ' . selected($category, $term->slug, false) . '>' . esc_html($term->name) . '</option>'; }
+            echo '</select> <button type="submit">' . esc_html__('Показать', 'vniipo') . '</button></form>';
+        }
+        if ($category) { $query_args['tax_query'] = array(array('taxonomy' => 'vniipo_document_category', 'field' => 'slug', 'terms' => $category)); }
+    }
+    $query = new WP_Query($query_args);
     if (!$query->have_posts()) { echo '<p class="vn-empty">' . esc_html__('В этом разделе пока нет опубликованных материалов.', 'vniipo') . '</p>'; return; }
     echo '<div class="' . esc_attr($type === 'vniipo_faq' ? 'vn-faq' : 'vn-documents') . '">';
     while ($query->have_posts()) {
@@ -99,6 +115,11 @@ function vniipo_render_listing($type) {
             echo '<details><summary>' . esc_html(get_the_title()) . '</summary><div>';
             the_content();
             echo '</div></details>';
+        } elseif ($type === 'vniipo_document') {
+            echo '<article class="vn-document-card"><h2><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h2>';
+            vniipo_render_document_details(get_the_ID());
+            if (has_excerpt()) { the_excerpt(); }
+            echo '</article>';
         } else { get_template_part('template-parts/news-card'); }
     }
     echo '</div><div class="vn-pager">' . wp_kses_post((string) paginate_links(array('total' => $query->max_num_pages, 'current' => $paged))) . '</div>';
@@ -106,7 +127,7 @@ function vniipo_render_listing($type) {
 }
 
 add_filter('document_title_parts', static function ($parts) {
-    $name = 'ФГБУ ВНИИПО МЧС России — Оренбургский филиал';
+    $name = 'ФГБУ ВНИИПО МЧС России — ' . __('Оренбургский филиал', 'vniipo');
     $parts['site'] = $name;
     if (is_front_page()) { $parts['title'] = $name; unset($parts['site'], $parts['tagline']); }
     return $parts;
