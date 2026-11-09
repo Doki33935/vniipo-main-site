@@ -53,6 +53,7 @@ compose.yaml                         отдельный локальный ст�
 - [План совершенствования](docs/improvement-plan.md)
 - [Разработка и установка](docs/development.md)
 - [Просмотр на хостинге конференций](docs/hosting-preview.md)
+- [Краткая инструкция установки комплекта](docs/hosting-preview-quickstart.html)
 - [Основа дизайна vniipo.ru](docs/design-reference.md)
 - [Редакторские возможности](docs/content-management.md)
 - [Три языковые версии](docs/multilingual.md)
